@@ -1,7 +1,8 @@
 {{ define "main" }}
 {{ .Content }}
-{{ partial "homesearch.html" . }}
 {{ partial "menu.html" . }}
+{{ partial "homesearch.html" . }}
+
 
 
 <ul class="container" id="artlist">
@@ -15,7 +16,7 @@
       </h4>
       <ul>
         {{- range.Pages.ByTitle }}
-        <li  style="list-style-type:'-'" id="myarticles" class="older-article">
+        <li  style="list-style-type:none;" id="myarticles" class="older-article">
           <div style="display: inline-block;" class="mainlist">
             <a href="{{.Permalink}}">
               <div style="display: inline-block;">
@@ -45,7 +46,7 @@
 			<ul class="tag-cloud center">
 				{{ range $name, $items := .Site.Taxonomies.tags }}
 						{{ $len := len $items }}
-							&#160<li style=" font-size: 11px; display: inline-block;"><a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower }}">{{ $name | title }} <span  style="color: #AAA;">({{ len $items }})</span></a> | </li>
+							&#160<li style=" font-size: 11px; display: inline-block;"><a href="{{ $.Site.BaseURL }}/tags/{{ $name | urlize | lower }}">{{ $name | title }} <span  style="color: #AAA;">({{ len $items }})</span></a> | </li>
 
 				{{ end }}
 			</ul>
