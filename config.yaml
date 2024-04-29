@@ -1,0 +1,92 @@
+baseurl: 'https://arabic.page'
+languageCode: en-us
+title: Arabic Language-Learning Directory
+googleAnalytics: ""
+preserveTaxonomyNames: false
+footnotereturnlinkcontents: ↩
+disableHugoGeneratorInject: true
+pluralizeListTitles: false
+minify: true
+
+staticDir:
+- static
+
+taxonomies:
+  category: categories
+  subject: subjects
+  instructor: instructors
+  dialect: dialects
+  tag: tags
+  language: languages
+  topic: topics
+  type: types
+
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+#    - identifier: books
+#      name: books
+#      url: /hmm/
+#      weight: 1
+
+params:
+  description: "Arbic Language Learning Materials"
+  FooterText: "اللُّــغَــوِيّــــ | 2023 ©"
+
+
+frontmatter:
+  author: Tarek Shehata
+  github: 'https://github.com/tarekshehata'
+  sitename: Arabic Page
+  twitter: '######'
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+outputFormats:
+  RSS:
+    mediatype: application/rss
+    baseName: atom
+
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: emacs
+    tabWidth: 4
