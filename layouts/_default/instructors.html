@@ -1,0 +1,43 @@
+{{ define "title" -}}
+{{ .Title | title }}
+{{- end }}
+{{ define "main" -}}
+{{ .Content }}
+
+<style>
+  ul,
+  ol {
+    list-style-type: "-";
+  }
+
+</style>
+
+
+{{ partial "breadcrumbs.html" . }}
+{{ partial "homesearch.html" . }}
+{{ partial "menu.html" . }}
+
+<ul id=artlist>
+  {{- range.Pages.ByTitle }}
+
+  <li id="myarticles" class="older-article">
+    <div class="mainlist">
+    <a class="mainlink" href="{{.Permalink}}">
+        {{if .Params.image}}
+        <img class="authors__image" src="{{ .Params.image }}" alt="{{ .Params.name }}">
+        {{ end }}
+        {{if .Params.link }}
+ <p style="margin: 5px; display: inline-block;"> <a href="{{ .Params.link }}">{{ .Params.title }} </a></p>
+ {{else}}
+ <p style="margin: 5px; display: inline-block;"> <a href="{{ .Permalink }}">{{ .Params.title }} </a></p>
+ {{end}}
+
+      </a>
+      <small style="margin-left: 3px; color: #777; font-size: 10px; text-decoration: none; " class="mainlink" id="mini">{{ .Params.lang}} ({{ len .Pages }}) </small>
+
+
+    </div>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}{{/* end main */ -}}

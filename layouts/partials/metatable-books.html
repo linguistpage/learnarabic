@@ -1,0 +1,81 @@
+{{ partial "breadcrumbs.html" . }}
+<div class="metatable" style="padding-bottom: 0px !important;" >
+  <h3 class="single-title">{{.Title }}</h3>
+  <table class="emp-sales" style="direction: rtl;">
+    <tbody>
+      <tr>
+        <th scope="row">الإسم</th>
+        <td><li class="table-list"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        </td>
+      </tr>
+            <tr>
+        <th scope="row">دار النشر</th>
+        <td>{{- $pubhouses := .Language.Params.Taxonomies.pubhouse | default "pubhouses" }}{{- range ($.GetTerms $pubhouses) }}
+          <li class="table-list"><a href="">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </td>
+      </tr>
+        <tr>
+        <th scope="row">المؤلفون</th>
+        <td>{{- $bauthors := .Language.Params.Taxonomies.bauthor | default "bauthors" }}{{- range ($.GetTerms $bauthors) }}
+          <li class="table-list"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </td>
+      </tr>
+      
+      
+      
+      <!--
+              <tr>
+        <th scope="row">سنة الإصدار</th>
+        <td>{{- $pubyears := .Language.Params.Taxonomies.pubyear | default "pubyears" }}{{- range ($.GetTerms $pubyears) }}
+          <li class="table-list"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </td>
+      </tr>
+        {{ if .Params.arwords2 }}
+            <tr>
+        <th scope="row">Arabic [2]</th>
+        <td>
+          <li class="table-list"><a href="{{.Params.sources }}">{{.Params.arwords2 }}</a><li>
+          
+        </td>
+      </tr>
+      {{ end }}
+      
+      -->
+        <tr>
+        <th scope="row">قسم</th>
+        <td>{{- $bcategories := .Language.Params.Taxonomies.bcategory | default "bcategories" }}{{- range ($.GetTerms $bcategories) }}
+          <li class="table-list"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </td>
+      </tr>
+            <tr>
+        <th scope="row">اللغة</th>
+        <td>{{- $languages := .Language.Params.Taxonomies.language | default "languages" }}{{- range ($.GetTerms $languages) }}
+          <li class="table-list"><a href="">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </td>
+      </tr>
+      <tr style="">
+        <th style="" scope="row">رابط التحميل</th>
+        <td>
+          <li class="table-list">{{ $pgtitle := print "static/books/" .Title ".pdf" }}
+{{ if fileExists $pgtitle }}
+
+    <button><a style="text-decoration: none;" href="/books/{{.Title }}.pdf" >تحميل</a></button>
+
+{{end}}</li>
+
+        </td>
+      </tr>
+
+
+
+
+
+
+
+    </tbody>
+  </table>
