@@ -15,9 +15,6 @@
   <div id="myarticles" class="older-article">
     <div class="mainlist">
     <a class="mainlink" href="{{.Permalink}}">
-        {{if .Params.image}}
-        <img class="authors__image" src="{{ .Params.image }}" alt="{{ .Params.name }}">
-        {{ end }}
         {{if .Params.link }}
  <p style="display: inline-block;"> <a href="{{ .Params.link }}">{{ .Params.title }} </a></p>
  {{else}}

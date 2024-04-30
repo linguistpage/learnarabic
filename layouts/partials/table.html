@@ -35,10 +35,24 @@ th a{
 }
 
 
-table, tbody, tr, td, th {
-  border: 1px solid whitesmoke;
+tr, th {
+  border-bottom: 1px solid whitesmoke;
   padding: 5px;
-border-collapse: collapse;
+  border-collapse: collapse;
+}
+
+table{
+  padding: 5px;
+  border-collapse: collapse;
+}
+
+tr:last-child, td:last-child {
+  border: 0px !important;
+}
+td {
+  padding-left: 6px;
+  padding-right: 5px;
+
 }
 </style>
 <div class="container" id="artlist">
@@ -49,7 +63,7 @@ border-collapse: collapse;
         <th>
           <a id="{{ .File.ContentBaseName }}" style="width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
         </th>
-        <th> Count</th>
+        <th> Courses</th>
       </tr>
     </thead>
     <tbody>
@@ -60,7 +74,7 @@ border-collapse: collapse;
             <p id="searchable" style=" display: inline-block;"> {{ .Params.title }}</p>
           </a>
         </td>
-        <td> ({{ len (where .Pages "Section" "!=" "") }}) </td>
+        <td style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
       </tr>
       {{ end -}}
     </tbody>

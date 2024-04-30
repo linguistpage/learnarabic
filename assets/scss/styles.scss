@@ -15,6 +15,7 @@ body{
     margin: 0;
     padding: 5px;
     line-height: 1.5;
+    background: #D8DBE2;
 }
 
 
@@ -38,12 +39,12 @@ a:visited {
 
 main {
     max-width: 750px;
-    border: 1px solid #bbb ;
     margin: 0 auto;
     box-sizing: border-box;
     min-height: 100%;
     background: #fefefe !important;
-    padding: 5px;
+    padding: 10px;
+    border: 2px solid #212738;
 
 }
 
@@ -69,8 +70,6 @@ footer {
     padding-bottom: 5px;
     padding-left: 0px;
     margin-top: 0px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
     width: 100% !important;
     background: transparent !important;
     direction: ltr;
@@ -132,13 +131,13 @@ footer {
 }
 
 input#search {
-    height: 2.1rem;
+    height: 2.5rem;
     text-align: left;
     display: block;
     width: 100%;
     padding-left: 2%;
-    border-radius: 15px !important;
-    border: 2px solid #bbb;
+    border-radius: 3px !important;
+    border: 2px solid #212738;
 
 
 }
@@ -153,11 +152,10 @@ input#search {
 
 .search {
     position: relative;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 20px !important;
     display: flex;
     text-align: left;
     background: white;
