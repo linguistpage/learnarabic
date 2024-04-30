@@ -61,20 +61,20 @@ td {
     <thead>
       <tr>
         <th>
-          <a id="{{ .File.ContentBaseName }}" style="width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
+          <a style="width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
         </th>
-        <th> Courses</th>
+        <th id="searchable"> Courses</th>
       </tr>
     </thead>
     <tbody>
       {{- range.Pages.ByTitle }}
-      <tr>
+      <tr id="searchable">
         <td>
-          <a href="{{.Permalink}}">
+          <a id="searchable" href="{{.Permalink}}">
             <p id="searchable" style=" display: inline-block;"> {{ .Params.title }}</p>
           </a>
         </td>
-        <td style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
+        <td id="searchable" style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
       </tr>
       {{ end -}}
     </tbody>
