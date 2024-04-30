@@ -1,0 +1,69 @@
+<style>
+.container, table, tbody, tr, thead {
+  width: 100%;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: 80%;
+  min-width: 80%;
+  max-width: 80%;
+  word-break: break-all;
+}
+
+th:nth-child(1) {
+  text-align: left;
+}
+th:nth-child(2) {
+  text-align: right;
+}
+
+tr td:nth-child(1) {
+  text-align: left;
+}
+tr td:nth-child(2) {
+  text-align: right;
+}
+
+th {
+  background: whitesmoke;
+  text-decoration: none;
+}
+
+th a{
+  text-decoration: none;
+}
+
+
+table, tbody, tr, td, th {
+  border: 1px solid whitesmoke;
+  padding: 5px;
+border-collapse: collapse;
+}
+</style>
+<div class="container" id="artlist">
+  {{- range.Pages.ByTitle }}
+  <table id="myarticles" class="item">
+    <thead>
+      <tr>
+        <th>
+          <a id="{{ .File.ContentBaseName }}" style="width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
+        </th>
+        <th> Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- range.Pages.ByTitle }}
+      <tr>
+        <td>
+          <a href="{{.Permalink}}">
+            <p id="searchable" style=" display: inline-block;"> {{ .Params.title }}</p>
+          </a>
+        </td>
+        <td> ({{ len (where .Pages "Section" "!=" "") }}) </td>
+      </tr>
+      {{ end -}}
+    </tbody>
+  </table>
+  {{ end -}}
+</div>

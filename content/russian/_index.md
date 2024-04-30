@@ -1,5 +1,5 @@
 ---
-title: Pусскоязычных 🇷🇺
+title: 🇷🇺 Pусскоязычных
 url: /russian
 language: russian
 ---

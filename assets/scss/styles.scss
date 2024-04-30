@@ -5,14 +5,16 @@
     //margin: 0;
 }
 html, body {
-  font-family: 'verdana';
+  font-family: 'arial';
 }
 html {
 
 }
 
-body, button {
+body{
     margin: 0;
+    padding: 5px;
+    line-height: 1.5;
 }
 
 
@@ -35,7 +37,8 @@ a:visited {
 
 
 main {
-    max-width: 650px;
+    max-width: 750px;
+    border: 1px solid #bbb ;
     margin: 0 auto;
     box-sizing: border-box;
     min-height: 100%;
@@ -134,12 +137,17 @@ input#search {
     display: block;
     width: 100%;
     padding-left: 2%;
+    border-radius: 15px !important;
+    border: 2px solid #bbb;
+
 
 }
 
 @media screen and (max-width: 450px) {
   input#search {
+    width: 100%;
   }
+
 }
 
 
@@ -147,9 +155,13 @@ input#search {
     position: relative;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px !important;
     display: flex;
     text-align: left;
     background: white;
+
 }
 
 
@@ -207,6 +219,8 @@ display:block;
 }
 
 .item h4 {
+  width: 100%;
+  background: whitesmoke;
 }
 .item p {
   line-height: 1.75em;
