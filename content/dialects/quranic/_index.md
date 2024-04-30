@@ -1,4 +1,0 @@
----
-title: Quranic
-type: dialect
----

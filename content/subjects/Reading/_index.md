@@ -1,4 +1,0 @@
----
-title: Reading
-type: subject
----

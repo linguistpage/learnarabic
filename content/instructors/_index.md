@@ -1,4 +1,0 @@
----
-title: Instructors
-layout: instructors
----

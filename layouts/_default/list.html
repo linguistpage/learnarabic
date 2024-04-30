@@ -69,15 +69,15 @@ td {
 }
 </style>
 <div class="container" id="artlist">
-
   <table id="myarticles" class="item">
 
     <thead>
       <tr>
         <th>
-          Title
+          {{.Title}}
         </th>
-        <th id="searchable"> Courses</th>
+        <th> Info</th>
+
       </tr>
     </thead>
     <tbody>
@@ -95,17 +95,8 @@ td {
             </a>
         </td>
         <td>
-        <small class="mainlink" id="mini">
-          {{ .Params.Instructors}} </small>
+          {{.Params.Subjects}} | {{ .Params.Languages}} {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
 
-          {{ if lt (.Params.Languages) .File.ContentBaseName}}
-          <small> | {{.Params.Subjects}}</small>
-          {{else}}
-          <small>{{ .Params.Languages}}</small>
-          {{end}}
-          <small>
-          {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
-          </small>
           </td>
       </tr>
 {{- end }}
