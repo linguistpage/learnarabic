@@ -1,25 +1,12 @@
 {{- define "main" }}
-
-
-
 {{ partial "breadcrumbs.html" . }}
-
 {{ partial "homesearch.html" . }}
-
-
 <div id=artlist>
-
-
-
   <table id="myarticles" class="item">
-
     <thead>
       <tr>
-        <th>
-          Title
-        </th>
+        <th> Title </th>
         <th> Info</th>
-
       </tr>
     </thead>
     <tbody>
@@ -30,25 +17,14 @@
       {{- with site.GetPage (printf "/%s/%s" $type $name) }}
       <tr id="searchable">
         <td>
-<a href="{{ .Permalink }}">{{ .Params.title }} </a>
+          <a href="{{ .Permalink }}">{{ .Params.title }} </a>
         </td>
         <td>
-
-{{ $count }}
-
-          </td>
+          {{ $count }}
+        </td>
       </tr>
       {{- end }}
       {{- end }}
     </tbody>
-
   </table>
-
-
-
-
-
-
-
-
-{{- end }}{{/* end main */ -}}
+  {{- end }}{{/* end main */ -}}

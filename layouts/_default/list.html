@@ -3,108 +3,40 @@
 {{- end }}
 {{ define "main" -}}
 {{ .Content }}
-
-
-
 {{ partial "breadcrumbs.html" . }}
 {{ partial "homesearch.html" . }}
-
-
-
-<style>
-.container, table, tbody, tr, thead {
-  width: 100%;
-}
-
-thead tr th:first-child,
-tbody tr td:first-child {
-  width: 80%;
-  min-width: 80%;
-  max-width: 80%;
-  word-break: break-all;
-}
-
-th:nth-child(1) {
-  text-align: left;
-}
-th:nth-child(2) {
-  text-align: right;
-}
-
-tr td:nth-child(1) {
-  text-align: left;
-}
-tr td:nth-child(2) {
-  text-align: right;
-}
-
-th {
-  background: whitesmoke;
-  text-decoration: none;
-}
-
-th a{
-  text-decoration: none;
-}
-
-
-tr, th {
-  border-bottom: 1px solid whitesmoke;
-  padding: 5px;
-  border-collapse: collapse;
-}
-
-table{
-  padding: 5px;
-  border-collapse: collapse;
-}
-
-tr:last-child, td:last-child {
-  border: 0px !important;
-}
-td {
-  padding-left: 6px;
-  padding-right: 5px;
-
-}
-</style>
 <div class="container" id="artlist">
   <table id="myarticles" class="item">
-
     <thead>
       <tr>
         <th>
           {{.Title}}
         </th>
         <th> Info</th>
-
       </tr>
     </thead>
     <tbody>
-{{- range.Pages.ByTitle }}
+      {{- range.Pages.ByTitle }}
       <tr id="searchable">
         <td>
           <a class="mainlink" href="{{.Permalink}}">
-
-              {{if .Params.link }}
-       <p style="display: inline-block;"> <a href="{{ .Params.link }}">{{ .Params.title }} </a></p>
-       {{else}}
-       <p style="isplay: inline-block;"> <a href="{{ .Permalink }}">{{ .Params.title }} </a></p>
-       {{end}}
-
-            </a>
+            {{if .Params.link }}
+            <p style="display: inline-block;">
+              <a href="{{ .Params.link }}">{{ .Params.title }} </a>
+            </p>
+            {{else}}
+              <p style="isplay: inline-block;">
+                <a href="{{ .Permalink }}">{{ .Params.title }} </a>
+              </p>
+              {{end}}
+          </a>
         </td>
         <td>
           {{.Params.Subjects}} | {{ .Params.Languages}} {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
-
-          </td>
+        </td>
       </tr>
-{{- end }}
+      {{- end }}
     </tbody>
-
   </table>
-
 </div>
-
-
 {{- end }}{{/* end main */ -}}
