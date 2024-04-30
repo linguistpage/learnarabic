@@ -11,37 +11,109 @@
 
 
 
-<div id=artlist>
-  {{- range.Pages.ByTitle }}
+<style>
+.container, table, tbody, tr, thead {
+  width: 100%;
+}
 
-  <div id="myarticles" class="older-article">
-    <div class="mainlist">
-    <a class="mainlink" href="{{.Permalink}}">
-        {{if .Params.image}}
-        <img class="lazy authors__image" src="{{ .Params.image }}" alt="{{ .Params.name }}">
-        {{ end }}
-        {{if .Params.link }}
- <p style="display: inline-block;"> <a href="{{ .Params.link }}">{{ .Params.title }} </a></p>
- {{else}}
- <p style="isplay: inline-block;"> <a href="{{ .Permalink }}">{{ .Params.title }} </a></p>
- {{end}}
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: 80%;
+  min-width: 80%;
+  max-width: 80%;
+  word-break: break-all;
+}
 
-      </a>
-      <small class="mainlink" id="mini">
-        {{ .Params.Instructors}} </small>
+th:nth-child(1) {
+  text-align: left;
+}
+th:nth-child(2) {
+  text-align: right;
+}
 
-        {{ if lt (.Params.Languages) .File.ContentBaseName}}
-        <small> | {{.Params.Subjects}}</small>
-        {{else}}
-        <small>{{ .Params.Languages}}</small>
-        {{end}}
-        <small>
-        {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
-        </small>
+tr td:nth-child(1) {
+  text-align: left;
+}
+tr td:nth-child(2) {
+  text-align: right;
+}
+
+th {
+  background: whitesmoke;
+  text-decoration: none;
+}
+
+th a{
+  text-decoration: none;
+}
 
 
-    </div>
-  </div>
-  {{- end }}
+tr, th {
+  border-bottom: 1px solid whitesmoke;
+  padding: 5px;
+  border-collapse: collapse;
+}
+
+table{
+  padding: 5px;
+  border-collapse: collapse;
+}
+
+tr:last-child, td:last-child {
+  border: 0px !important;
+}
+td {
+  padding-left: 6px;
+  padding-right: 5px;
+
+}
+</style>
+<div class="container" id="artlist">
+
+  <table id="myarticles" class="item">
+
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th id="searchable"> Courses</th>
+      </tr>
+    </thead>
+    <tbody>
+{{- range.Pages.ByTitle }}
+      <tr id="searchable">
+        <td>
+          <a class="mainlink" href="{{.Permalink}}">
+
+              {{if .Params.link }}
+       <p style="display: inline-block;"> <a href="{{ .Params.link }}">{{ .Params.title }} </a></p>
+       {{else}}
+       <p style="isplay: inline-block;"> <a href="{{ .Permalink }}">{{ .Params.title }} </a></p>
+       {{end}}
+
+            </a>
+        </td>
+        <td>
+        <small class="mainlink" id="mini">
+          {{ .Params.Instructors}} </small>
+
+          {{ if lt (.Params.Languages) .File.ContentBaseName}}
+          <small> | {{.Params.Subjects}}</small>
+          {{else}}
+          <small>{{ .Params.Languages}}</small>
+          {{end}}
+          <small>
+          {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
+          </small>
+          </td>
+      </tr>
+{{- end }}
+    </tbody>
+
+  </table>
+
 </div>
+
+
 {{- end }}{{/* end main */ -}}
