@@ -5,54 +5,51 @@
 
 
 
-<ul class="container" id="artlist">
+<div class="container" id="artlist">
   {{- range.Pages.ByTitle }}
-  <li id="myarticles" class="item">
+  <div id="myarticles" class="item">
     <div class="mainlist">
-      <h4 style="width: 100%; padding: 5px;">
+      <h4>
         <a id="{{ .File.ContentBaseName }}" style="width: 100%;" href="{{.Permalink}}">
           {{ .Title}}
         </a>
       </h4>
-      <ul>
+      <div>
         {{- range.Pages.ByTitle }}
-        <li  style="list-style-type:none;" id="myarticles" class="older-article">
-          <div style="display: inline-block;" class="mainlist">
+        <div  style="list-style-type:none;" id="searchable">
+          <div style="display: inline-block;">
             <a href="{{.Permalink}}">
-              <div style="display: inline-block;">
-                <p style=" display: inline-block;"> {{ .Params.title }}</p>
-                <small style="display: inline-block; color: #777;" class="mainlink" id="mini"> &nbsp({{ len (where .Pages "Section" "!=" "") }}) </small>
+              <div id="searchable" style="display: inline-block;">
+                <p id="searchable" style=" display: inline-block;"> {{ .Params.title }}</p>
+                <small style="display: inline-block; color: #777;"> &nbsp({{ len (where .Pages "Section" "!=" "") }}) </small>
               </div>
             </a>
           </div>
-        </li>
+        </div>
         {{ end -}}
-      </ul>
+      </div>
     </div>
-  </li>
+  </div>
   {{ end -}}
-</ul>
 
-<br>
-<hr>
-{{ if isset .Site.Taxonomies "tags" }}
-	{{ if not (eq (len .Site.Taxonomies.tags) 0) }}
-	<div data-pagefind-ignore class="panel sidebar-menu">
-		<div class="panel-heading">
-			<h3 class="panel-title">Tags
-			</h3>
-		</div>
-		<div class="panel-body">
-			<ul class="tag-cloud center">
-				{{ range $name, $items := .Site.Taxonomies.tags }}
-						{{ $len := len $items }}
-							&#160<li style=" font-size: 11px; display: inline-block;"><a href="{{ $.Site.BaseURL }}/tags/{{ $name | urlize | lower }}">{{ $name | title }} <span  style="color: #AAA;">({{ len $items }})</span></a> | </li>
+  <br>
+  <hr>
+  {{ if isset .Site.Taxonomies "tags" }}
+  	{{ if not (eq (len .Site.Taxonomies.tags) 0) }}
+  			<h3 style="margin-bottom: 10px;">Tags
+  			</h3>
+  				{{ range $name, $items := .Site.Taxonomies.tags }}
+  						{{ $len := len $items }}
+  						<small style="display: inline-block;">
+                <a id="searchable" href="{{ $.Site.BaseURL }}/tags/{{ $name | urlize | lower }}">
+                  {{ $name | title }} ({{ len $items }})
+                </a> &#160
+              </small>
+  				{{ end }}
+  	{{ end }}
+  {{ end }}
+</div>
 
-				{{ end }}
-			</ul>
-		</div>
-	</div>
-	{{ end }}
-{{ end }}
+
 
 {{ end }}

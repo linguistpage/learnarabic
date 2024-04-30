@@ -1,13 +1,6 @@
 {{- define "main" }}
 
 
-<style>
-  ul,
-  ol {
-    list-style-type: "-";
-  }
-</style>
-
 
 {{ partial "breadcrumbs.html" . }}
 
@@ -51,25 +44,24 @@
   })
   // @license-end
 </script>
-{{ partial "menu.html" . }}
 
 
-<ul id=artlist>
+<div id=artlist>
   {{- $type := .Type }}
   {{- range $key, $value := .Data.Terms.Alphabetical }}
   {{- $name := .Name }}
   {{- $count := .Count }}
   {{- with site.GetPage (printf "/%s/%s" $type $name) }}
-  <li id="myarticles" class="older-article">
+  <div id="myarticles" class="older-article">
     <div class="mainlist">
       <a class="mainlink" href="{{.Permalink}}">
  <p style="margin: 5px; vertical-align: middle; display: inline-block;"> <a href="{{ .Permalink }}">{{ .Params.title }} </a></p>
       </a>
-      <small style="margin-left: 3px; color: #777; font-size: 10px; text-decoration: none; " class="mainlink" id="mini"> ({{ $count }})</small>
+      <small style="margin-left: 3px;text-decoration: none; " class="mainlink" id="mini"> ({{ $count }})</small>
 
     </div>
-  </li>
+  </div>
   {{- end }}
   {{- end }}
-</ul>
+</div>
 {{- end }}{{/* end main */ -}}
