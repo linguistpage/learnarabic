@@ -21,13 +21,13 @@
         <td>
           <a class="mainlink" href="{{.Permalink}}">
             {{if .Params.link }}
-            <p style="display: inline-block;">
+
               <a href="{{ .Params.link }}">{{ .Params.title }} </a>
-            </p>
+            
             {{else}}
-              <p style="isplay: inline-block;">
+
                 <a href="{{ .Permalink }}">{{ .Params.title }} </a>
-              </p>
+
               {{end}}
           </a>
         </td>
