@@ -3,7 +3,9 @@ title: ""
 categories: []
 tags: []
 instructors: []
-arexps: []
-sources: []
+subjects: []
+link: []
+dialects: []
+languages: []
 slug: ""
 ---

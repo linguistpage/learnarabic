@@ -1,5 +1,4 @@
 ---
 title: عربی گرائمر
-icon: 📂
-url: /urdu/ur-grammar
+url: /urdu/grammar
 ---

@@ -2,10 +2,9 @@
 title: A'raab-ul-Quran - اعراب القرآن
 description:
 link: 'https://www.youtube.com/playlist?list=PLmcMQH9TZ96CbaIuTks_v4qvfqTrYo__U'
-instructors: عامر-سہیل
+instructors: عامر سہیل
 tags: [گرائمر]
-tags_color: '#b25642'
 subjects: گرائمر
 languages: أردو
-dialects: msa
+dialects: MSA
 ---
