@@ -4,29 +4,10 @@
     <thead>
       <tr>
         <th>
-          <a style="width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
+          <a style="color: #040404; width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
         </th>
-        {{ if eq .File.ContentBaseName "german" }}
-        <th id="searchable"> Kurse</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "spanish" }}
-        <th id="searchable"> Cursos</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "english" }}
-        <th id="searchable"> Courses</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "french" }}
-        <th id="searchable"> Cours</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "urdu" }}
-        <th id="searchable"> کورسز</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "turkish" }}
-        <th id="searchable"> Dersler</th>
-        {{ end }}
-        {{ if eq .File.ContentBaseName "russian" }}
-        <th id="searchable"> Курсы</th>
-        {{ end }}
+        <th> #</th>
+
       </tr>
     </thead>
     <tbody>
