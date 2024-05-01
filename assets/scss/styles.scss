@@ -28,10 +28,12 @@ h6 {
 }
 
 
-a {}
+a {
+  color: #0388a6;
+}
 
 a:visited {
-  color: #00e;
+  color: #0388a6;
 }
 
 small {
@@ -39,12 +41,12 @@ small {
   color: #666;
 }
 main {
-	max-width: 750px;
+	max-width: 700px;
 	margin: 0 auto;
 	box-sizing: border-box;
 	min-height: 100vh !important;
 	background: #fefefe !important;
-	padding: 10px;
+  border: 2px solid #040404;
 
 }
 
@@ -67,6 +69,7 @@ footer {
 	padding-bottom: 5px;
 	padding-left: 0px;
 	margin-top: 0px;
+  margin-bottom: 0px;
 	width: 100% !important;
 	background: transparent !important;
 	direction: ltr;
@@ -130,15 +133,18 @@ footer {
 }
 
 input#search {
-	height: 2.5rem;
-	text-align: left;
-	display: block;
-	width: 100%;
-	padding-left: 2%;
-	border-radius: 3px !important;
-	border: 2px solid #212738;
-
-
+    all: unset;
+    background: #fffefc;
+    color: #040404;
+    border-bottom: 2px solid #040404;
+    border-top: 2px solid #040404;
+    height: 3rem;
+    text-align: left;
+    display: block;
+    width: 100%;
+    padding-left: 2%;
+    margin-bottom: -2px;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 450px) {
@@ -150,14 +156,12 @@ input#search {
 
 
 .search {
-	position: relative;
-	margin-top: 15px !important;
-	margin-bottom: 20px !important;
-	margin-right: auto;
-	margin-left: auto;
-	display: flex;
-	text-align: left;
-	background: white;
+  position: relative;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      display: flex;
+      text-align: left;
+
 
 }
 
@@ -196,6 +200,7 @@ img {
 
 .container {
 	display: block;
+  border-bottom: 2px solid #040404;
 }
 
 
@@ -217,6 +222,7 @@ tbody,
 tr,
 thead {
 	width: 100%;
+
 }
 
 thead tr th:first-child,
@@ -248,21 +254,24 @@ th {
 	text-decoration: none;
 }
 
+
 th a {
 	text-decoration: none;
 }
 
-
+.container table:first-child {
+  margin-top: -2px;
+}
 tr,
 th {
 	border-bottom: 1px solid whitesmoke;
-	padding: 5px;
 	border-collapse: collapse;
+  padding: 6px;
 }
 
 table {
 	padding: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 	border-collapse: collapse;
 }
 
@@ -272,11 +281,7 @@ td:last-child {
 }
 
 td {
-	padding-left: 7px;
-	padding-right: 5px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-
+	padding: 5px 8px 5px 10px;
 }
 
 .triangle {
@@ -284,6 +289,7 @@ td {
 	background-size: cover;
 	min-height: 75px;
 	height: 75px;
+
 }
 
 .black,

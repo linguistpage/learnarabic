@@ -4,8 +4,7 @@
 {{ partial "homesearch.html" . }}
 {{ partial "table.html" . }}
 <!--######## TAGS #########-->
-<br>
-<hr>
+<div style="padding:10px;" class="tag-cloud">
 {{ if isset .Site.Taxonomies "tags" }}
 {{ if not (eq (len .Site.Taxonomies.tags) 0) }}
 <h3 style="margin-bottom: 10px;">Tags </h3>
@@ -17,4 +16,5 @@
 {{ end }}
 {{ end }}
 {{ end }}
+</div>
 {{ end }}
