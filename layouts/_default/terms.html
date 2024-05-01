@@ -6,7 +6,6 @@
     <thead>
       <tr>
         <th> Title </th>
-        <th> Info</th>
       </tr>
     </thead>
     <tbody>
@@ -17,11 +16,19 @@
       {{- with site.GetPage (printf "/%s/%s" $type $name) }}
       <tr id="searchable">
         <td>
-          <a href="{{ .Permalink }}">{{ .Params.title }} </a>
+          <div>
+          <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+          <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+          </div>
+          <small style="display: block;">
+            {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
+            {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
+            {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
+            {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
+
+          </small>
         </td>
-        <td>
-          {{ $count }}
-        </td>
+
       </tr>
       {{- end }}
       {{- end }}

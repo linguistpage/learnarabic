@@ -12,28 +12,30 @@
         <th>
           {{.Title}}
         </th>
-        <th> Info</th>
       </tr>
     </thead>
     <tbody>
       {{- range.Pages.ByTitle }}
       <tr id="searchable">
         <td>
-          <a class="mainlink" href="{{.Permalink}}">
+
             {{if .Params.link }}
-
-              <a href="{{ .Params.link }}">{{ .Params.title }} </a>
-            
+              <a href="{{ .Params.link }}">{{ .Params.title }}</a>
+              <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
             {{else}}
-
-                <a href="{{ .Permalink }}">{{ .Params.title }} </a>
-
+                <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+                <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
               {{end}}
-          </a>
+
+          <small style="display: block;">
+            {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
+            {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
+            {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
+            {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
+          </small>
+
         </td>
-        <td>
-          {{.Params.Subjects}} | {{ .Params.Languages}} {{ if lt (len .Pages) 2 }}{{ else }}{{ len .Pages}}{{ end }}
-        </td>
+
       </tr>
       {{- end }}
     </tbody>
