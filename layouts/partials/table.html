@@ -23,7 +23,7 @@
             </tr>
             {{- range.Pages.ByParam "subjects" }}
             <tr  id="searchable">
-                <td class="inner" style="padding:0px !important; border-bottom: 0px;">
+                <td colspan="2" class="inner" style="padding:0px !important; border-bottom: 0px;">
                   <div style="margin-left: 10px; padding-left: 5px;">
                     {{if .Params.link }}
                     <a style="font-size: 13px;" href="{{ .Params.link }}">{{ .Params.title }}</a>
@@ -42,7 +42,7 @@
                     </small>
                     </div>
                 </td>
-                <td></td>
+
             </tr>
             {{- end }} {{ end -}}
         </tbody>
