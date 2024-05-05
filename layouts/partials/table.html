@@ -21,7 +21,7 @@
                 </td>
                 <td id="searchable" style="border-left: 1px solid whitesmoke !important;font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
             </tr>
-            {{- range.Pages.ByTitle }}
+            {{- range.Pages.ByParam "subjects" }}
             <tr  id="searchable">
                 <td class="inner" style="padding:0px !important; border-bottom: 0px;">
                   <div style="margin-left: 10px; padding-left: 5px;">
