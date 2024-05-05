@@ -1,4 +1,4 @@
 ---
-title: Deutschsprachige
+title: 🇩🇪 German
 url: /german
 ---

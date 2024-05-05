@@ -1,4 +1,4 @@
 ---
-title: Les Francophones
+title: 🇫🇷 French
 url: /french
 ---

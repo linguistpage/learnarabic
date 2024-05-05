@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+
 *,
 *:before,
 *:after {
@@ -8,7 +11,7 @@
 
 html,
 body {
-	font-family: 'arial';
+	font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 html {}
@@ -144,7 +147,7 @@ input#search {
     text-align: left;
     display: block;
     width: 100%;
-    padding-left: 2%;
+    padding-left: 1%;
     margin-bottom: -2px;
     font-size: 14px;
 }
@@ -226,12 +229,14 @@ thead {
 	width: 100%;
 
 }
+table {
+}
 
 thead tr th:first-child,
 tbody tr td:first-child {
-	width: 80%;
-	min-width: 80%;
-	max-width: 80%;
+	width: 95%;
+	min-width: 95%;
+	max-width: 95%;
 	word-break: break-all;
 }
 
@@ -252,8 +257,8 @@ tr td:nth-child(2) {
 }
 
 th {
-	background: whitesmoke;
 	text-decoration: none;
+	background: whitesmoke;
 }
 
 
@@ -264,8 +269,8 @@ th a {
 .container table:first-child {
   margin-top: -2px;
 }
-tr,
-th {
+
+th,tr {
 	border-bottom: 1px solid whitesmoke;
 	border-collapse: collapse;
   padding: 6px;
@@ -286,6 +291,9 @@ td {
 	padding: 5px 8px 5px 10px;
 }
 
+.inner {
+ padding: 0px !important;
+}
 /**.triangle {
 	background-image: url('/images/pal2.svg');
 	background-size: cover;
@@ -298,29 +306,4 @@ td {
 .black a {
 	text-align: center;
 	color: #040404;
-}
-/* HTML: <div class="ribbon">Your text content</div> */
-.ribbon {
-  font-size: 13px;
-  font-weight: bold;
-  color: #fff;
-	padding: 3px;
-}
-.ribbon {
-  --f: .2em; /* control the folded part*/
-  --r: .0em; /* control the ribbon shape */
-
-  position: absolute;
-  top: 0px;
-  right: calc(-1*var(--f));
-  padding-inline: .25em;
-  line-height: 1.8;
-	background-image: url('/images/pal2.svg');
-	background-size: cover;
-  border-bottom: var(--f) solid #0005;
-  border-left: var(--r) solid #0000;
-  clip-path:
-    polygon(var(--r) 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
-      calc(100% - var(--f)) calc(100% - var(--f)),var(--r) calc(100% - var(--f)),
-      0 calc(50% - var(--f)/2));
 }

@@ -5,5 +5,5 @@ link: 'https://www.youtube.com/embed/videoseries?si=f51BIM5KHCrGOqyH&amp;list=PL
 languages: English
 subjects: General
 instructors: Nouman
-dialects: msa
+dialects: MSA
 ---

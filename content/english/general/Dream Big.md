@@ -5,5 +5,5 @@ tags:   [Intensive]
 languages: English
 subjects: General
 instructors: Nouman
-dialects: Quranic
+dialects: MSA
 ---

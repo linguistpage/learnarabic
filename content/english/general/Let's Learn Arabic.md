@@ -5,5 +5,5 @@ link: 'https://youtube.com/playlist?list=PL-O46cO0eFqYlMgzgDE4mr1uN8ohXRcLO&si=j
 languages: English
 subjects: General
 instructors: Ahmed Essawy
-dialects: msa
+dialects: MSA
 ---

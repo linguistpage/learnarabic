@@ -1,4 +1,4 @@
 ---
-title: Türkçe konuşanlar
+title: 🇹🇷 Turkish
 url: /turkish
 ---

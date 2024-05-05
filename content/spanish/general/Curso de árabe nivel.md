@@ -6,6 +6,6 @@ instructors: Driss
 subjects: General
 link: https://youtube.com/playlist?list=PLDRkc3pst2alKfitkzvUGuiepJDhdr1_d&si=m6RfZavybY4-e1TS
 dialects: MSA
-languages: Spanish
+languages: Español
 slug: ""
 ---

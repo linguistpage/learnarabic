@@ -90,3 +90,6 @@ markup:
     noHl: false
     style: emacs
     tabWidth: 4
+
+
+contentDir : content/

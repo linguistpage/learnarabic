@@ -1,4 +1,4 @@
 ---
-title: Pусскоязычных
+title: 🇷🇺 Russian
 url: /russian
 ---
