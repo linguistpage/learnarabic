@@ -1,0 +1,27 @@
+<div class="container" id="artlist">
+  {{- range.Pages.ByTitle }}
+  <table id="myarticles" class="item">
+    <thead>
+      <tr>
+        <th>
+          <a style="color: #040404; width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
+        </th>
+        <th style="font-weight: normal;"> #</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{- range.Pages.ByTitle }}
+      <tr id="searchable">
+        <td>
+          <a id="searchable" href="{{.Permalink}}">
+            {{ .Params.title }}
+          </a>
+        </td>
+        <td id="searchable" style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
+      </tr>
+      {{ end -}}
+    </tbody>
+  </table>
+  {{ end -}}
+</div>

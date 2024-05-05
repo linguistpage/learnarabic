@@ -1,27 +1,50 @@
 <div class="container" id="artlist">
-  {{- range.Pages.ByTitle }}
-  <table id="myarticles" class="item">
-    <thead>
-      <tr>
-        <th>
-          <a style="color: #040404; width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
-        </th>
-        <th style="font-weight: normal;"> #</th>
+    <div id="searchable">{{ .Content }}</div>
+    {{- range.Pages.ByTitle }}
+    <table id="myarticles" class="item">
+        <thead>
+            <tr>
+                <th>
+                    <a style="color: #040404; width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
+                </th>
+                <th style="font-weight: normal;"> #</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      {{- range.Pages.ByTitle }}
-      <tr id="searchable">
-        <td>
-          <a id="searchable" href="{{.Permalink}}">
+            </tr>
+        </thead>
+        <tbody>
+            {{- range.Pages.ByTitle }}
+            <tr id="searchable">
+                <td>
+                    <a style="color: #040404;
+                              font-weight: 600;
+                              text-decoration: none;" id="searchable" href="{{.Permalink}}">
             {{ .Params.title }}
           </a>
-        </td>
-        <td id="searchable" style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
-      </tr>
-      {{ end -}}
-    </tbody>
-  </table>
-  {{ end -}}
+                </td>
+                <td id="searchable" style="font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
+            </tr>
+            {{- range.Pages.ByTitle }}
+            <tr id="searchable">
+                <td style="margin-left: 100px !important; border-left: 5px solid red !important; padding-left: 10px;">
+
+                    {{if .Params.link }}
+                    <a style="font-size: 14px;" href="{{ .Params.link }}">{{ .Params.title }}</a>
+                    <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small> {{else}}
+                    <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+                    <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small> {{end}}
+
+                    <small style="font-size: 12px; display: block;">
+                      {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
+                      {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
+                      {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
+                      {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
+                    </small>
+
+                </td>
+
+            </tr>
+            {{- end }} {{ end -}}
+        </tbody>
+    </table>
+    {{ end -}}
 </div>

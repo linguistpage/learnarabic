@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ .Content }}
 {{ partial "menu.html" . }}
 {{ partial "homesearch.html" . }}
 {{ partial "table.html" . }}
