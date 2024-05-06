@@ -2,8 +2,8 @@
   {{- range.Pages.ByTitle }}
   <ul id="myarticles" class="item">
     <li>
-      <h3 id="{{.File.ContentBaseName}}" style="margin-bottom: 5px;">
-      <a style="text-decoration: none; color: #040404; font-weight: 600;"  href="{{.Permalink}}">{{ .Title}}</a>
+      <h3 id="{{.File.ContentBaseName}} searchable" style="margin-bottom: 5px;">
+      <a id="searchable" style="text-decoration: none; color: #040404; font-weight: 600;"  href="{{.Permalink}}">{{ .Title}}</a>
       </h3>
 
       {{- range.Pages.ByTitle }}
@@ -13,7 +13,7 @@
         <li>
 
           <div>
-          <a style=" color: #040404;" href="{{.Permalink}}">{{ .Params.title }} </a>
+          <a id="searchable" style=" color: #040404;" href="{{.Permalink}}">{{ .Params.title }} </a>
           <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
           </div>
 
