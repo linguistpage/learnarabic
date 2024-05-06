@@ -1,4 +1,4 @@
 ---
-title: 🇫🇷 French
+title: French
 url: /french
 ---

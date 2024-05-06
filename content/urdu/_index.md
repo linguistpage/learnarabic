@@ -1,4 +1,4 @@
 ---
-title: 🇵🇰 Urdu
+title: Urdu
 url: /urdu/
 ---

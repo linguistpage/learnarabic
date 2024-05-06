@@ -1,4 +1,4 @@
 ---
-title: 🇹🇷 Turkish
+title: Turkish
 url: /turkish
 ---

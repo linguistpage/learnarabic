@@ -19,13 +19,33 @@
                   <a href="{{ .Permalink }}">{{ .Params.title }}</a>
                   <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
                   {{end}}
-                  <small style="display: block;">
-                    {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
-                    {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
-                    {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
-                    {{if .Params.categories}} {{ .Params.categories }} | {{ end }}
-                    {{if .Params.Dialects}} {{ .Params.Dialects }} {{ end }}
-                  </small>
+                  <div>
+                    {{if .Params.Subjects}}
+                    <small class="meta">
+                      {{ .Params.Subjects}}
+                    </small>
+                    {{end}}
+                    {{if .Params.instructors}}
+                    <small class="meta">
+                      {{ .Params.Instructors }}
+                    </small>
+                    {{end}}
+                    {{if .Params.Languages}}
+                    <small class="meta">
+                      {{ .Params.Languages }}
+                    </small>
+                    {{end}}
+                    {{if .Params.categories}}
+                    <small class="meta">
+                      {{ .Params.Categories }}
+                    </small>
+                    {{end}}
+                    {{if .Params.Dialects}}
+                    <small class="meta">
+                      {{ .Params.Dialects }}
+                    </small>
+                    {{end}}
+                  </div>
               </div>
             </li>
           </ul>

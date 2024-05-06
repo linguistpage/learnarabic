@@ -1,11 +1,9 @@
 ---
-title: "Alphabet"
+title: Alphabet
 categories: wikipedia
-tags: [alphabet]
-instructors:
-subjects: Writing
+instructors: 
 link: https://en.wikipedia.org/wiki/Arabic_alphabet
 dialects: MSA
 languages: English
-slug: ""
+subjects: Writing
 ---

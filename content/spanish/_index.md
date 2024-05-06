@@ -1,4 +1,4 @@
 ---
-title: 🇪🇸 Spanish
+title: Spanish
 url: /spanish
 ---

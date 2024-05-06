@@ -1,4 +1,4 @@
 ---
-title: 🇦🇺 English
+title: English
 url: /english
 ---
