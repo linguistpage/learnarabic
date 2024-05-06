@@ -10,7 +10,6 @@
 
 html,
 body {
-	background: #fcfbf9;
 	font-family: serif;
 }
 
@@ -22,25 +21,23 @@ body {
 
 
 a {
-  color: #1e1e1e;
-	text-decoration: underline 1px dashed #aaa;
+	text-decoration: underline 1px solid #00e;
 }
 
 a:visited {
-  color: #1e1e1e;
+  color: #00e;
 }
 
 li {
-	padding: 2px;
-	margin: 3px 2px 3px 2px;
+	padding: 0;
+	margin: 0;
 	list-style-type: none;
 
 }
 
 ul {
-	padding-left: 2px;
+	padding-left: 0px;
 	margin-left: 0px;
-	border-left: 1px solid whitesmoke;
 }
 
 main {
@@ -122,15 +119,13 @@ footer {
 
 input#search {
     all: unset;
-		background: #fcfbf9;
     color: #040404;
-    border: 2px solid #040404;
+    border: 1px solid #040404;
     height: 2.5rem;
     text-align: left;
     display: block;
     width: 100%;
     padding-left: 1%;
-    margin-bottom: -2px;
 }
 
 @media screen and (max-width: 450px) {
