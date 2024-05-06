@@ -7,17 +7,17 @@
       </h3>
 
       {{- range.Pages.ByTitle }}
-<details>
-  <summary>
-  <a style="text-decoration: none; font-weight: bolder; color: #040404;" href="{{.Permalink}}">{{ .Params.title }} </a>
-  <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
-  </summary>
+
       <ul id="searchable">
 
         <li>
 
+          <div style="margin-bottom: 5px !important;">
+          <a style="text-decoration: none; font-weight: bolder; color: #040404;" id="searchable" href="{{.Permalink}}">{{ .Params.title }} </a>
+          <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
+          </div>
 
-
+<!--
           {{- range.Pages.ByParam "subjects" }}
 
           <ul id="searchable">
@@ -65,11 +65,12 @@
           </ul>
 
           {{- end }}
+          -->
 
         </li>
 
       </ul>
-</details>
+
       {{ end -}}
 
     </li>
