@@ -8,7 +8,7 @@
       {{- range.Pages.ByTitle }}
       <ul id="searchable">
         <li>
-          <div style="margin-bottom: 3px !important;">
+          <div style="margin-bottom: 5px !important;">
           <a style="text-decoration: none; font-weight: bolder; color: #040404;" id="searchable" href="{{.Permalink}}">{{ .Params.title }}</a>
           <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
           </div>
@@ -16,7 +16,7 @@
           {{- range.Pages.ByParam "subjects" }}
           <ul id="searchable">
             <li>
-              <div>
+              <div style="padding-bottom: 5px;">
                 {{if .Params.link }}
                 <a href="{{ .Params.link }}">{{ .Params.title }}</a>
                 <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
