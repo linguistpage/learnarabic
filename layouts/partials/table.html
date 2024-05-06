@@ -2,8 +2,8 @@
   {{- range.Pages.ByTitle }}
   <ul id="myarticles" class="item">
     <li>
-      <h3 style="margin-bottom: 5px;">
-      <a id="searchable" style="text-decoration: none; color: #040404; font-weight: 600;" id="{{.File.ContentBaseName}}" href="{{.Permalink}}">{{ .Title}}</a>
+      <h3 id="searchable"style="margin-bottom: 5px;">
+      <a style="text-decoration: none; color: #040404; font-weight: 600;" id="{{.File.ContentBaseName}}" href="{{.Permalink}}">{{ .Title}}</a>
       </h3>
 
       {{- range.Pages.ByTitle }}
