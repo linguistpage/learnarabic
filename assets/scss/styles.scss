@@ -186,3 +186,9 @@ img {
 .meta + .meta::before {
 	content: "-"
 }
+
+.matched-recipe {
+	color: #781313 !important;
+	text-decoration: underline 1px solid #781313;
+
+}
