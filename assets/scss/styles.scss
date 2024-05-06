@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400..700&display=swap');
 
 *,
 *:before,
@@ -186,9 +185,4 @@ img {
 
 .meta + .meta::before {
 	content: "-"
-}
-
-.matched-recipe {
-color: #781313 !important;
-text-decoration: underline 3px solid #781313;
 }
