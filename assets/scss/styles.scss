@@ -21,7 +21,7 @@ body {
 
 
 a {
-	text-decoration: underline 1px solid #00e;
+	text-decoration: underline;
 }
 
 a:visited {
@@ -188,7 +188,8 @@ img {
 }
 
 .matched-recipe {
-	color: #781313 !important;
+	background: #781313 !important;
+color: whitesmoke;
 	text-decoration: underline 1px solid #781313;
 
 }
