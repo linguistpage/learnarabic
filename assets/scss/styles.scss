@@ -25,7 +25,7 @@ color: #040404;
 }
 
 a:visited {
-  color: #040404:;
+  color: #040404;
 }
 
 li {
@@ -185,4 +185,8 @@ img {
 
 .meta + .meta::before {
 	content: "-"
+}
+.matched-recipe {
+color: #040404;
+background: #fabd2f;
 }
