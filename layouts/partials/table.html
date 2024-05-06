@@ -1,51 +1,39 @@
 <div class="container" id="artlist">
-    <div id="searchable">{{ .Content }}</div>
-    {{- range.Pages.ByTitle }}
-    <table id="myarticles" class="item">
-        <thead>
-            <tr>
-                <th>
-                    <a id="{{.File.ContentBaseName}}" style="font-weight: semibold; color: #040404; width: 100%;" href="{{.Permalink}}">{{ .Title}}</a>
-                </th>
-                <th style="border-left: 1px solid whitesmoke; font-weight: normal;"><a style="color: #040404; width: 100%;" href="{{.Permalink}}"> </a> </th>
-
-            </tr>
-        </thead>
-        <tbody>
-            {{- range.Pages.ByTitle }}
-            <tr id="searchable">
-                <td>
-                    <a style="font-size: 14px; color: #040404;" id="searchable" href="{{.Permalink}}">
-            {{ .Params.title }}
-          </a>
-                </td>
-                <td id="searchable" style="border-left: 1px solid whitesmoke !important;font-size: 14px;"> {{ len (where .Pages "Section" "!=" "") }} </td>
-            </tr>
-            {{- range.Pages.ByParam "subjects" }}
-            <tr  id="searchable">
-                <td colspan="2" class="inner" style="padding:0px !important; border-bottom: 0px;">
-                  <div style="margin-left: 10px; padding-left: 5px;">
-                    {{if .Params.link }}
-                    <a style="font-size: 13px;" href="{{ .Params.link }}">{{ .Params.title }}</a>
-                    <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-                    {{else}}
-                    <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-                    <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-                    {{end}}
-
-                    <small style="font-size: 11px; display: block;">
-                      {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
-                      {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
-                      {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
-                      {{if .Params.categories}} {{ .Params.categories }} | {{ end }}
-                      {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
-                    </small>
-                    </div>
-                </td>
-
-            </tr>
-            {{- end }} {{ end -}}
-        </tbody>
-    </table>
-    {{ end -}}
+  {{- range.Pages.ByTitle }}
+  <ul id="myarticles" class="item">
+    <li>
+      <a style="text-decoration: none; color: #040404; font-weight: 600;" id="{{.File.ContentBaseName}}" href="{{.Permalink}}">{{ .Title}}</a>
+      {{- range.Pages.ByTitle }}
+      <ul id="searchable">
+        <li>
+          <a id="searchable" href="{{.Permalink}}">{{ .Params.title }}</a>
+          <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
+          {{- range.Pages.ByParam "subjects" }}
+          <ul id="searchable">
+            <li>
+              <div>
+                {{if .Params.link }}
+                <a href="{{ .Params.link }}">{{ .Params.title }}</a>
+                <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+                {{else}}
+                  <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+                  <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+                  {{end}}
+                  <small style="display: block;">
+                    {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
+                    {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
+                    {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
+                    {{if .Params.categories}} {{ .Params.categories }} | {{ end }}
+                    {{if .Params.Dialects}} {{ .Params.Dialects }} {{ end }}
+                  </small>
+              </div>
+            </li>
+          </ul>
+          {{- end }}
+        </li>
+      </ul>
+      {{ end -}}
+    </li>
+  </ul>
+  {{ end -}}
 </div>
