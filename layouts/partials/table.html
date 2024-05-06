@@ -3,12 +3,12 @@
   <ul id="myarticles" class="item">
     <li>
       <h3 style="margin-bottom: 5px;">
-      <a style="text-decoration: none; color: #040404; font-weight: 600;" id="{{.File.ContentBaseName}}" href="{{.Permalink}}">{{ .Title}}</a>
+      <a id="searchable" style="text-decoration: none; color: #040404; font-weight: 600;" id="{{.File.ContentBaseName}}" href="{{.Permalink}}">{{ .Title}}</a>
       </h3>
 
       {{- range.Pages.ByTitle }}
 
-      <ul id="searchable">
+      <ul>
 
         <li>
 
@@ -20,16 +20,16 @@
 <!--
           {{- range.Pages.ByParam "subjects" }}
 
-          <ul id="searchable">
+          <ul>
             <li>
               <div style="padding-bottom: 5px;">
                 {{if .Params.link }}
 
-                <a href="{{ .Params.link }}">{{ .Params.title }}</a>
+                <a id="searchable" href="{{ .Params.link }}">{{ .Params.title }}</a>
                 <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
 
                 {{else}}
-                  <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+                  <a id="searchable" href="{{ .Permalink }}">{{ .Params.title }}</a>
                   <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
                   {{end}}
 
