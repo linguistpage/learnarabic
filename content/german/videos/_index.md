@@ -1,3 +1,3 @@
 ---
-title: videos
+title: Videos
 ---

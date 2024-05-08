@@ -1,4 +1,4 @@
 ---
-title: Español
+title: Spanish
 url: /spanish
 ---

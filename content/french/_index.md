@@ -1,4 +1,4 @@
 ---
-title: Français
+title: French
 url: /french
 ---
