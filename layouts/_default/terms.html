@@ -1,37 +1,49 @@
-{{- define "main" }}
-{{ partial "breadcrumbs.html" . }}
-{{ partial "homesearch.html" . }}
-<div id=artlist>
-  <table id="myarticles" class="item">
-    <thead>
-      <tr>
-        <th> Title </th>
-      </tr>
-    </thead>
-    <tbody>
-      {{- $type := .Type }}
-      {{- range $key, $value := .Data.Terms.Alphabetical }}
-      {{- $name := .Name }}
-      {{- $count := .Count }}
-      {{- with site.GetPage (printf "/%s/%s" $type $name) }}
-      <tr id="searchable">
-        <td>
-          <div>
-          <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-          <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-          </div>
-          <small style="display: block;">
-            {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
-            {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
-            {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
-            {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
 
+  {{ define "main" -}}
+  {{ .Content }}
+  {{ partial "breadcrumbs.html" . }}
+  {{ partial "homesearch.html" . }}
+  <div class="container" id="artlist">
+    {{- range.Pages.ByTitle }}
+    <ul id="myarticles" class="item">
+      <li>
+        <div>
+        <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+        <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+        </div>
+        <div>
+          {{if .Params.Subjects}}
+          <small class="meta">
+            {{ .Params.Subjects}}
           </small>
-        </td>
+          {{end}}
+          {{if .Params.instructors}}
+          <small class="meta">
+            {{ .Params.Instructors }}
+          </small>
+          {{end}}
+          {{if .Params.Languages}}
+          <small class="meta">
+            {{ .Params.Languages }}
+          </small>
+          {{end}}
+          {{if .Params.categories}}
+          <small class="meta">
+            {{ .Params.Categories }}
+          </small>
+          {{end}}
+          {{if .Params.Dialects}}
+          <small class="meta">
+            {{ .Params.Dialects }}
+          </small>
+          {{end}}
+        </div>
 
-      </tr>
-      {{- end }}
-      {{- end }}
-    </tbody>
-  </table>
+
+
+      </li>
+    </ul>
+
+    {{ end -}}
+  </div>
   {{- end }}{{/* end main */ -}}

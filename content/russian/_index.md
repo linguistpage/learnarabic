@@ -1,4 +1,4 @@
 ---
-title: Russian
+title: Русский
 url: /russian
 ---

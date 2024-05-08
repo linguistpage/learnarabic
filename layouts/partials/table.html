@@ -13,7 +13,7 @@
         <li>
 
           <div id="searchable">
-          <a style=" color: #040404;" href="{{.Permalink}}">{{ .Params.title }} </a>
+          <a id="searchable" href="{{.Permalink}}">{{ .Params.title }} </a>
           <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
           </div>
 

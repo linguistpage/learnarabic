@@ -1,4 +1,4 @@
 ---
-title: German
+title: Deutsch
 url: /german
 ---

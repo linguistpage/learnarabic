@@ -1,6 +1,6 @@
 ---
 title: Standard Hocharabisch Grammatik
-categories: Website
+categories: website
 link: https://www.grammatiken.de/arabische-grammatik/
 instructors: Sprachenlernen24.de
 dialects: MSA

@@ -1,44 +1,49 @@
-{{ define "title" -}}
-{{ .Title | title }}
-{{- end }}
+
 {{ define "main" -}}
 {{ .Content }}
 {{ partial "breadcrumbs.html" . }}
 {{ partial "homesearch.html" . }}
 <div class="container" id="artlist">
-  <table id="myarticles" class="item">
-    <thead>
-      <tr>
-        <th>
-          {{.Title}}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {{- range.Pages.ByTitle }}
-      <tr id="searchable">
-        <td>
+  {{- range.Pages.ByTitle }}
+  <ul id="myarticles" class="item">
+    <li>
+      <div>
+      <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+      <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+      </div>
+      <div>
+        {{if .Params.Subjects}}
+        <small class="meta">
+          {{ .Params.Subjects}}
+        </small>
+        {{end}}
+        {{if .Params.instructors}}
+        <small class="meta">
+          {{ .Params.Instructors }}
+        </small>
+        {{end}}
+        {{if .Params.Languages}}
+        <small class="meta">
+          {{ .Params.Languages }}
+        </small>
+        {{end}}
+        {{if .Params.categories}}
+        <small class="meta">
+          {{ .Params.Categories }}
+        </small>
+        {{end}}
+        {{if .Params.Dialects}}
+        <small class="meta">
+          {{ .Params.Dialects }}
+        </small>
+        {{end}}
+      </div>
 
-            {{if .Params.link }}
-              <a href="{{ .Params.link }}">{{ .Params.title }}</a>
-              <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-            {{else}}
-                <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-                <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-              {{end}}
 
-          <small style="display: block;">
-            {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
-            {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
-            {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
-            {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
-          </small>
 
-        </td>
+    </li>
+  </ul>
 
-      </tr>
-      {{- end }}
-    </tbody>
-  </table>
+  {{ end -}}
 </div>
 {{- end }}{{/* end main */ -}}
