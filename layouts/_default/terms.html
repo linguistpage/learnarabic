@@ -9,7 +9,7 @@
       <li>
         <div>
         <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-        <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+        <small>({{ len .Pages}})</small>
         </div>
         <div>
           {{if .Params.Subjects}}

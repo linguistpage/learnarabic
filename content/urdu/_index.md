@@ -1,4 +1,4 @@
 ---
-title: Urdu
+title: اردو میں وسائل
 url: /urdu/
 ---

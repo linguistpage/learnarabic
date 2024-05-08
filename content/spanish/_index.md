@@ -1,4 +1,4 @@
 ---
-title: Spanish
+title: Recursos en Español
 url: /spanish
 ---

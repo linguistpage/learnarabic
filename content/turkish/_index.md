@@ -1,4 +1,4 @@
 ---
-title: Turkish
+title: Türkçe kaynaklar
 url: /turkish
 ---

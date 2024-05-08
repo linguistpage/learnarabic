@@ -1,80 +1,15 @@
 <div class="container" id="artlist">
-  {{- range.Pages.ByTitle }}
-  <ul id="myarticles" class="item">
+
+  <ul id="myarticles" class="item" style="margin-top: 5px; margin-bottom: 5px;">
+{{- range.Pages.ByTitle }}
     <li>
-      <h3 id="{{.File.ContentBaseName}} searchable" style="margin-bottom: 5px;">
-      <a id="searchable" style="text-decoration: none; color: #040404; font-weight: 600;"  href="{{.Permalink}}">{{ .Title}}</a>
-      </h3>
-
-      {{- range.Pages.ByTitle }}
-
-      <ul>
-
-        <li>
-
-          <div id="searchable">
-          <a id="searchable" href="{{.Permalink}}">{{ .Params.title }} </a>
-          <small> ({{ len (where .Pages "Section" "!=" "") }}) </small>
-          </div>
-
-<!--
-          {{- range.Pages.ByParam "subjects" }}
-
-          <ul>
-            <li>
-              <div style="padding-bottom: 5px;">
-                {{if .Params.link }}
-
-                <a href="{{ .Params.link }}">{{ .Params.title }}</a>
-                <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-
-                {{else}}
-                  <a  href="{{ .Permalink }}">{{ .Params.title }}</a>
-                  <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-                  {{end}}
-
-                  <div>
-                    {{if .Params.Subjects}}
-                    <small class="meta">
-                      {{ .Params.Subjects}}
-                    </small>
-                    {{end}}
-                    {{if .Params.instructors}}
-                    <small class="meta">
-                      {{ .Params.Instructors }}
-                    </small>
-                    {{end}}
-                    {{if .Params.Languages}}
-                    <small class="meta">
-                      {{ .Params.Languages }}
-                    </small>
-                    {{end}}
-                    {{if .Params.categories}}
-                    <small class="meta">
-                      {{ .Params.Categories }}
-                    </small>
-                    {{end}}
-                    {{if .Params.Dialects}}
-                    <small class="meta">
-                      {{ .Params.Dialects }}
-                    </small>
-                    {{end}}
-                  </div>
-              </div>
-            </li>
-          </ul>
-
-          {{- end }}
-          -->
-
-        </li>
-
-      </ul>
-
-      {{ end -}}
-
+      <h4 id="{{.File.ContentBaseName}} searchable" style="font-weight: normal !important; display: inline-block; margin-top: 5px;margin-bottom: 5px;">
+      <a id="searchable" style=""  href="{{.Permalink}}">{{ .Title}}</a>
+      </h4>
+      <small style="display: inline-block;"> &#160 ({{ len .Pages }}) </small>
     </li>
+      {{ end -}}
   </ul>
 
-  {{ end -}}
+
 </div>

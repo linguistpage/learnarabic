@@ -1,4 +1,4 @@
 ---
-title: French
+title: Ressources en Français
 url: /french
 ---
