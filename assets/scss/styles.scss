@@ -10,8 +10,7 @@
 
 body {
 	font-family: Arial !important;
-	letter-spacing: -0.05rem !important;
-	line-height: 1.4;
+
 }
 
 
@@ -104,14 +103,13 @@ h2{
 	margin: 0px;
 	background: #eee;
 	padding: 5px;
-	font-family: monospace;
 	font-size: 20px;
 
 }
 
 h3 {
 
-	margin: 6px;
+	margin: 0px;
 }
 #instructorsList {
 	padding:5px;
@@ -119,18 +117,19 @@ h3 {
 }
 .control {
 	padding:10px 5px 10px 5px;
-	background: #eee;
+
 	border-bottom: 1px solid #ddd;
 }
 ul {
 	list-style-type: decimal;
+	padding-left: 30px;
 
 }
 li {
-	margin-bottom: 2px;
+	margin-bottom: 7px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:600px) {
   #content-list {
     display: flex;
     flex-wrap: wrap;
@@ -149,4 +148,8 @@ li {
 
 a:visited {
 	color: #00e;
+}
+h4 {
+
+	margin: 0;
 }

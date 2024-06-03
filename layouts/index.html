@@ -4,17 +4,19 @@
 
 
 <div class="control">
-  <!-- Search input -->
-  <label for="searchInput">Search:</label>
-  <input type="text" id="searchInput" placeholder="Search Resources...">
 
   <!-- Radio buttons for filtering by language -->
-  <div style="margin-top: 5px;">
-  <label><h3>Choose your language:<h3></label>
+  <div style="padding-bottom: 5px; border-bottom: 1px solid #ddd; margin-top: 5px; margin-bottom: 10px; ">
+  <label>1. Choose your language:</label>
   <div id="languageFilter">
-    <label><input type="radio" name="language" value="all" checked> All</label>
+    <label><input style="font-weight: bold; margin:0px !important; font-size: 18px;"type="radio" name="language" value="all" checked> All</label>
   </div>
 </div>
+  <!-- Search input -->
+  <label for="searchInput">2. Search the results:</label>
+  <input type="text" id="searchInput" placeholder="Search Resources...">
+
+
 </div>
 
 <!-- List of content grouped by categories -->
@@ -43,11 +45,12 @@
 
 <div>
   <div>
-    <h2>Search Instructors / Dialects / Subjects </h2>
-    <input style="margin-top: 10px; margin-bottom: 5px; " type="text" id="globalSearch" onkeyup="filterAllLists()" placeholder="Search instructors, dialects, subjects...">
+    <br>
+    <h3>Search Instructors / Dialects / Subjects </h3>
+    <input style="margin-top: 10px; margin-bottom: 10px; " type="text" id="globalSearch" onkeyup="filterAllLists()" placeholder="Search instructors, dialects, subjects...">
   </div>
   <div>
-    <h3 style="background: #eee; padding:5px;">All Instructors</h3>
+    <h4 style="background: #eee; padding:5px;">All Instructors</h4>
     <ul id="instructorsList">
       {{ range .Site.Taxonomies.instructors }}
               <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
@@ -55,16 +58,16 @@
     </ul>
   </div>
   <div>
-    <h3 style="background: #eee; padding:5px;">All Dialects</h3>
-    <ul id="dialectsList">
+    <h4 style="background: #eee; padding:5px;">All Dialects</h4>
+    <ul style="padding:5px; margin:5px;" id="dialectsList">
       {{ range .Site.Taxonomies.dialects }}
               <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
       {{ end }}
     </ul>
   </div>
   <div>
-    <h3 style="background: #eee; padding:5px;">All Subjects</h3>
-    <ul id="subjectsList">
+    <h4 style="background: #eee; padding:5px;">All Subjects</h4>
+    <ul style="padding:5px; margin:5px;" id="subjectsList">
       {{ range .Site.Taxonomies.subjects }}
               <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
       {{ end }}
