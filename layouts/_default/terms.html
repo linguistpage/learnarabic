@@ -2,7 +2,6 @@
   {{ define "main" -}}
   {{ .Content }}
   {{ partial "breadcrumbs.html" . }}
-  {{ partial "homesearch.html" . }}
   <div class="container" id="artlist">
     {{- range.Pages.ByTitle }}
     <ul id="myarticles" class="item">
