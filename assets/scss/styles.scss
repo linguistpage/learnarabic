@@ -9,7 +9,7 @@
 }
 
 body {
-	font-family: monospace !important;
+	font-family: Arial !important;
 	letter-spacing: -0.05rem !important;
 	line-height: 1.4;
 }
@@ -108,6 +108,15 @@ h2{
 	font-size: 20px;
 
 }
+
+h3 {
+
+	margin: 6px;
+}
+#instructorsList {
+	padding:5px;
+	margin: 0px;
+}
 .control {
 	padding:10px 5px 10px 5px;
 	background: #eee;
@@ -115,7 +124,7 @@ h2{
 }
 ul {
 	list-style-type: decimal;
-	font-size: 14px;
+
 }
 li {
 	margin-bottom: 2px;
@@ -131,4 +140,13 @@ li {
     border: 1px solid #ddd;
     flex: 1 0 50% !important;
 }
+}
+#searchInput, #globalSearch {
+	height: 1.4rem;
+	width: 250px;
+
+}
+
+a:visited {
+	color: #00e;
 }
