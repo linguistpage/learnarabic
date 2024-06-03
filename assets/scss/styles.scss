@@ -11,6 +11,7 @@
 body {
 	font-family: monospace !important;
 	letter-spacing: -0.05rem !important;
+	line-height: 1.4;
 }
 
 
@@ -86,4 +87,48 @@ img {
 
 .inner {
  padding: 0px !important;
+}
+
+#content-list {
+	display: flex;
+flex-wrap: wrap;
+
+
+}
+.category-group {
+	flex: 1 0 24%;
+		padding:0px;
+		border: 1px solid #ddd;
+}
+h2{
+	margin: 0px;
+	background: #eee;
+	padding: 5px;
+	font-family: monospace;
+	font-size: 20px;
+
+}
+.control {
+	padding:10px 5px 10px 5px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+}
+ul {
+	list-style-type: decimal;
+	font-size: 14px;
+}
+li {
+	margin-bottom: 2px;
+}
+
+@media screen and (max-width:800px) {
+  #content-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category-group {
+    padding: 0px;
+    border: 1px solid #ddd;
+    flex: 1 0 50% !important;
+}
 }

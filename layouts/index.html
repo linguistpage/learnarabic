@@ -1,135 +1,132 @@
 {{ define "main" }}
 
-    <title>{{ .Site.Title }}</title>
+<title>{{ .Site.Title }}</title>
 
 
-  <style media="screen and (max-width:800px)">
+<div class="control">
+  <!-- Search input -->
+  <label for="searchInput">Search:</label>
+  <input type="text" id="searchInput" placeholder="Search items...">
 
-
-    #content-list {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .category-group {
-        padding:0px;
-        border: 1px solid #ddd;
-        flex: 1 0 50% !important;
-    }
-
-</style>
-  <style media="screen">
-    #content-list {
-      display: flex;
-  flex-wrap: wrap;
-
-
-    }
-    .category-group {
-      flex: 1 0 24%;
-        padding:0px;
-        border: 1px solid #ddd;
-    }
-    h2{
-      margin: 0px;
-      background: #eee;
-      padding: 5px;
-      font-family: monospace;
-      font-size: 20px;
-
-    }
-    .control {
-      padding:10px 5px 10px 5px;
-      background: #eee;
-      border-bottom: 1px solid #ddd;
-    }
-    ul {
-      list-style-type: decimal;
-      font-size: 14px;
-    }
-  </style>
-    <h1>{{ .Site.Title }}</h1>
-    <div class="control">
-    <!-- Search input -->
-    <label for="searchInput">Search:</label>
-    <input type="text" id="searchInput" placeholder="Search items...">
-
-    <!-- Dropdown for filtering by language -->
-    <label for="languageFilter">Filter by Language:</label>
-    <select id="languageFilter">
-        <option value="all">All</option>
-    </select>
-
+  <!-- Radio buttons for filtering by language -->
+  <div style="margin-top: 5px;">
+  <label>Filter by Language:</label>
+  <div id="languageFilter">
+    <label><input type="radio" name="language" value="all" checked> All</label>
   </div>
-    <!-- List of content grouped by categories -->
+</div>
+</div>
 
-    <div id="content-list">
-        {{ $categories := .Site.RegularPages.GroupByParam "categories" }}
-        {{ range $categories }}
-        <div class="category-group" data-category="{{ .Key }}">
-            <h2>{{ .Key }}</h2>
-            <ul>
-                {{ range .Pages }}
-                <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
-                    {{ if .Params.link}}
-                    <a href="{{ .Params.link }}">{{ .Title }}</a>
-                    {{ else }}
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    {{ end }}
-                </li>
-                {{ end }}
-            </ul>
-        </div>
+<!-- List of content grouped by categories -->
+<div id="content-list">
+  {{ $categories := .Site.RegularPages.GroupByParam "categories" }}
+  {{ range $categories }}
+  <div class="category-group" data-category="{{ .Key }}">
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+      <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
+        {{ if .Params.link }}
+        <a href="{{ .Params.link }}">{{ .Title }}</a>
+
+        <small style="line-height: 1; display:block; font-size: 10px; color: #999;">{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.subjects}}</small>
+
+        {{ else }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ end }}
-    </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</div>
 
-    <script>
-        // Populate unique languages in the dropdown
-        const languageFilter = document.getElementById('languageFilter');
-        const languages = new Set();
-        document.querySelectorAll('[data-language]').forEach(item => {
-            languages.add(item.getAttribute('data-language'));
-        });
-        languages.forEach(language => {
-            const option = document.createElement('option');
-            option.value = language;
-            option.textContent = language;
-            languageFilter.appendChild(option);
-        });
+<div id="content-list">
+  <div class="category-group">
+    <h2>All Instructors</h2>
+<ul>
+    {{ range .Site.Taxonomies.instructors }}
+            <li data-title="{{ .Page.Title }}"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+    {{ end }}
+</ul>
+</div>
 
-        // Filter items
-        function filterItems() {
-            const searchValue = document.getElementById('searchInput').value.toLowerCase();
-            const languageFilterValue = languageFilter.value;
-            const items = document.querySelectorAll('#content-list li');
+<div class="category-group">
+  <h2>All Dialects</h2>
+<ul>
+  {{ range .Site.Taxonomies.dialects }}
+          <li data-title="{{ .Page.Title }}"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
+</ul>
+</div>
 
-            items.forEach(item => {
-                const title = item.getAttribute('data-title').toLowerCase();
-                const language = item.getAttribute('data-language');
+<div class="category-group">
+  <h2>All Subjects</h2>
+<ul>
+  {{ range .Site.Taxonomies.subjects }}
+          <li data-title="{{ .Page.Title }}"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
+</ul>
+</div>
 
-                const matchesSearch = title.includes(searchValue);
-                const matchesLanguage = (languageFilterValue === 'all') || (language === languageFilterValue);
+</div>
+<script>
+  // Populate unique languages as radio buttons
+  const languageFilter = document.getElementById('languageFilter');
+  const languages = new Set();
+  document.querySelectorAll('[data-language]').forEach(item => {
+    languages.add(item.getAttribute('data-language'));
+  });
+  languages.forEach(language => {
+    const label = document.createElement('label');
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = 'language';
+    radio.value = language;
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(language));
+    languageFilter.appendChild(label);
+  });
 
-                if (matchesSearch && matchesLanguage) {
-                    item.style.display = 'list-item';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+  // Filter items
+  function filterItems() {
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    const checkedRadio = document.querySelector('#languageFilter input:checked');
+    const languageFilterValue = checkedRadio ? checkedRadio.value : 'all';
+    const items = document.querySelectorAll('#content-list li');
 
-            // Show/hide category groups based on filtered items
-            const categoryGroups = document.querySelectorAll('.category-group');
-            categoryGroups.forEach(group => {
-                const visibleItems = group.querySelectorAll('li[style="display: list-item;"]');
-                if (visibleItems.length > 0) {
-                    group.style.display = 'block';
-                } else {
-                    group.style.display = 'none';
-                }
-            });
-        }
+    items.forEach(item => {
+      const title = item.getAttribute('data-title').toLowerCase();
+      const language = item.getAttribute('data-language');
 
-        // Attach event listeners
-        document.getElementById('searchInput').addEventListener('input', filterItems);
-        languageFilter.addEventListener('change', filterItems);
-    </script>
+      const matchesSearch = title.includes(searchValue);
+      const matchesLanguage = (languageFilterValue === 'all') || (language === languageFilterValue);
+
+      if (matchesSearch && matchesLanguage) {
+        item.style.display = 'list-item';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Show/hide category groups based on filtered items
+    const categoryGroups = document.querySelectorAll('.category-group');
+    categoryGroups.forEach(group => {
+      const visibleItems = group.querySelectorAll('li[style="display: list-item;"]');
+      if (visibleItems.length > 0) {
+        group.style.display = 'block';
+      } else {
+        group.style.display = 'none';
+      }
+    });
+  }
+
+  // Attach event listeners
+  document.getElementById('searchInput').addEventListener('input', filterItems);
+  document.getElementById('languageFilter').addEventListener('change', filterItems);
+
+  // Initial call to filter items
+  filterItems();
+</script>
+
 {{ end }}
