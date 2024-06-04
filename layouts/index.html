@@ -26,10 +26,10 @@
       {{ range .Pages }}
       <p data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
-        <a href="{{ .Params.link }}">- &#160 {{ .Title }}</a>
+        <a href="{{ .Params.link }}">{{ .Title }}</a>
         <small>{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.categories}}</small>
         {{ else }}
-        <a href="{{ .RelPermalink }}">- &#160 {{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ end }}
       </p>
       {{ end }}
