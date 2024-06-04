@@ -22,18 +22,18 @@
   {{ range $subjects }}
   <div class="category-group" data-category="{{ .Key }}">
     <h4>{{ .Key }}</h4>
-    <ul>
+    
       {{ range .Pages }}
-      <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
+      <p data-title="- &#160 {{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
         <a href="{{ .Params.link }}">{{ .Title }}</a>
         <small>{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.categories}}</small>
         {{ else }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ end }}
-      </li>
+      </p>
       {{ end }}
-    </ul>
+    
   </div>
   {{ end }}
 </div>
