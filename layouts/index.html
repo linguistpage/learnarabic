@@ -2,99 +2,12 @@
 
 <title>{{ .Site.Title }}</title>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-
-  .control {
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #f9f9f9 !important;
-  }
-
-  .control label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-
-  .control small {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .control input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    background: #fff !important;
-  }
-
-  .category-group {
-  }
-
-  .category-group h2 {
-    padding: 10px;
-    margin: 0;
-  }
-
-  .category-group ul {
-
-  }
-
-  .category-group li {
-    margin: 5px 0;
-  }
-
-  .category-group li a {
-  }
-
-  .category-group li small {
-    display: block;
-
-  }
-
-  #globalSearch {
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-
-  }
-
-  ul li {
-    display: inline-block;
-  }
-
-  ul li small {
-    color: #666;
-  }
-
-  @media (max-width: 768px) {
-    .control input[type="text"], #globalSearch {
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    ul li {
-      display: block;
-      margin: 5px 0;
-    }
-  }
-</style>
 
 <div class="control">
   <!-- Radio buttons for filtering by language -->
-  <div style="padding-bottom: 5px; margin-top: 5px; margin-bottom: 10px; ">
+  <div>
     <label>1. Choose your language:</label>
-    <small style="margin-top:5px !important;" id="languageFilter">
+    <small  id="languageFilter">
       <label><input type="radio" name="language" value="all" checked> All</label>
     </small>
   </div>
@@ -108,7 +21,7 @@
   {{ $subjects := .Site.RegularPages.GroupByParam "subjects" }}
   {{ range $subjects }}
   <div class="category-group" data-category="{{ .Key }}">
-    <p>{{ .Key }}</p>
+    <h4>{{ .Key }}</h4>
     <ul>
       {{ range .Pages }}
       <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
