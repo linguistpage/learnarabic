@@ -83,7 +83,7 @@
     // Loop through each list
     lists.forEach(function(listId) {
       var list = document.getElementById(listId);
-      var items = list.getElementsByTagName('li');
+      var items = list.getElementsByTagName('p');
 
       // Loop through the list items and hide those that don't match the search query
       for (var i = 0; i < items.length; i++) {
@@ -120,7 +120,7 @@
     const searchValue = document.getElementById('searchInput').value.toLowerCase();
     const checkedRadio = document.querySelector('#languageFilter input:checked');
     const languageFilterValue = checkedRadio ? checkedRadio.value : 'all';
-    const items = document.querySelectorAll('#content-list li');
+    const items = document.querySelectorAll('#content-list p');
 
     items.forEach(item => {
       const title = item.getAttribute('data-title').toLowerCase();
@@ -139,7 +139,7 @@
     // Show/hide category groups based on filtered items
     const categoryGroups = document.querySelectorAll('.category-group');
     categoryGroups.forEach(group => {
-      const visibleItems = group.querySelectorAll('li[style="display: list-item;"]');
+      const visibleItems = group.querySelectorAll('p[style="display: list-item;"]');
       if (visibleItems.length > 0) {
         group.style.display = 'block';
       } else {
