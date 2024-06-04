@@ -19,11 +19,10 @@
 <!-- List of content grouped by subjects -->
 <div id="content-list">
   {{ $subjects := .Site.RegularPages.GroupByParam "subjects" }}
-<ul>
   {{ range $subjects }}
   <div class="category-group" data-category="{{ .Key }}">
     <h4>{{ .Key }}</h4>
-    
+    <ul>
       {{ range .Pages }}
       <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
