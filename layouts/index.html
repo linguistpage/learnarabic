@@ -19,22 +19,22 @@
 <!-- List of content grouped by subjects -->
 <div id="content-list">
   {{ $subjects := .Site.RegularPages.GroupByParam "subjects" }}
-<div>
+<ul>
   {{ range $subjects }}
   <div class="category-group" data-category="{{ .Key }}">
     <h4>{{ .Key }}</h4>
     
       {{ range .Pages }}
-      <p data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
+      <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
         <a href="{{ .Params.link }}">{{ .Title }}</a>
         <small>{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.categories}}</small>
         {{ else }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ end }}
-      </p>
+      </li>
       {{ end }}
-    </div>
+    </ul>
   </div>
   {{ end }}
 </div>
@@ -83,7 +83,7 @@
     // Loop through each list
     lists.forEach(function(listId) {
       var list = document.getElementById(listId);
-      var items = list.getElementsByTagName('p');
+      var items = list.getElementsByTagName('li');
 
       // Loop through the list items and hide those that don't match the search query
       for (var i = 0; i < items.length; i++) {
@@ -120,7 +120,7 @@
     const searchValue = document.getElementById('searchInput').value.toLowerCase();
     const checkedRadio = document.querySelector('#languageFilter input:checked');
     const languageFilterValue = checkedRadio ? checkedRadio.value : 'all';
-    const items = document.querySelectorAll('#content-list p');
+    const items = document.querySelectorAll('#content-list li');
 
     items.forEach(item => {
       const title = item.getAttribute('data-title').toLowerCase();
@@ -139,7 +139,7 @@
     // Show/hide category groups based on filtered items
     const categoryGroups = document.querySelectorAll('.category-group');
     categoryGroups.forEach(group => {
-      const visibleItems = group.querySelectorAll('p[style="display: list-item;"]');
+      const visibleItems = group.querySelectorAll('li[style="display: list-item;"]');
       if (visibleItems.length > 0) {
         group.style.display = 'block';
       } else {
