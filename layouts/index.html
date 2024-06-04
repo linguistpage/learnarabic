@@ -24,12 +24,12 @@
     <h4>{{ .Key }}</h4>
     
       {{ range .Pages }}
-      <p data-title="- &#160 {{ .Title }}" data-language="{{ .Params.languages }}">
+      <p data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
-        <a href="{{ .Params.link }}">{{ .Title }}</a>
+        <a href="{{ .Params.link }}">- &#160 {{ .Title }}</a>
         <small>{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.categories}}</small>
         {{ else }}
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}">- &#160 {{ .Title }}</a>
         {{ end }}
       </p>
       {{ end }}
