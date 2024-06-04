@@ -2,37 +2,119 @@
 
 <title>{{ .Site.Title }}</title>
 
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .control {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f9f9f9 !important;
+  }
+
+  .control label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .control small {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .control input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: #fff !important;
+  }
+
+  .category-group {
+  }
+
+  .category-group h2 {
+    padding: 10px;
+    margin: 0;
+  }
+
+  .category-group ul {
+
+  }
+
+  .category-group li {
+    margin: 5px 0;
+  }
+
+  .category-group li a {
+  }
+
+  .category-group li small {
+    display: block;
+
+  }
+
+  #globalSearch {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+  }
+
+  ul li {
+    display: inline-block;
+  }
+
+  ul li small {
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .control input[type="text"], #globalSearch {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    ul li {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+</style>
 
 <div class="control">
-
   <!-- Radio buttons for filtering by language -->
   <div style="padding-bottom: 5px; margin-top: 5px; margin-bottom: 10px; ">
-  <label>1. Choose your language:</label>
-  <small style="margin-top:5px !important;" id="languageFilter">
-    <label><input type="radio" name="language" value="all" checked> All</label>
-  </small>
-</div>
+    <label>1. Choose your language:</label>
+    <small style="margin-top:5px !important;" id="languageFilter">
+      <label><input type="radio" name="language" value="all" checked> All</label>
+    </small>
+  </div>
   <!-- Search input -->
   <label for="searchInput">2. Search the results:</label>
   <input type="text" id="searchInput" placeholder="Search Resources...">
-
-
 </div>
 
-<!-- List of content grouped by categories -->
+<!-- List of content grouped by subjects -->
 <div id="content-list">
-  {{ $categories := .Site.RegularPages.GroupByParam "categories" }}
-  {{ range $categories }}
+  {{ $subjects := .Site.RegularPages.GroupByParam "subjects" }}
+  {{ range $subjects }}
   <div class="category-group" data-category="{{ .Key }}">
-    <h2>{{ .Key }}</h2>
+    <p>{{ .Key }}</p>
     <ul>
       {{ range .Pages }}
       <li data-title="{{ .Title }}" data-language="{{ .Params.languages }}">
         {{ if .Params.link }}
         <a href="{{ .Params.link }}">{{ .Title }}</a>
-
-        <small style="line-height: 1; display:block; color: #999;">{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.subjects}}</small>
-
+        <small>{{ .Params.Dialects}} - {{if .Params.instructors }}{{ .Params.instructors }}-{{end}}  {{ .Params.categories}}</small>
         {{ else }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ end }}
@@ -46,64 +128,62 @@
 <div>
   <div>
     <br>
-    <h3>Search Instructors / Dialects / Subjects </h3>
-    <input style="margin-top: 10px; margin-bottom: 10px; " type="text" id="globalSearch" onkeyup="filterAllLists()" placeholder="Search instructors, dialects, subjects...">
+    <h3>Search Instructors / Dialects / Subjects</h3>
+    <input type="text" id="globalSearch" onkeyup="filterAllLists()" placeholder="Search instructors, dialects, subjects...">
   </div>
   <div>
-    <h4 style="background: #eee; padding:5px;">All Instructors</h4>
+    <h4>All Instructors</h4>
     <ul id="instructorsList">
       {{ range .Site.Taxonomies.instructors }}
-              <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small></li>
       {{ end }}
     </ul>
   </div>
   <div>
-    <h4 style="background: #eee; padding:5px;">All Dialects</h4>
-    <ul style="padding:5px; margin:5px;" id="dialectsList">
+    <h4>All Dialects</h4>
+    <ul id="dialectsList">
       {{ range .Site.Taxonomies.dialects }}
-              <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small></li>
       {{ end }}
     </ul>
   </div>
   <div>
-    <h4 style="background: #eee; padding:5px;">All Subjects</h4>
-    <ul style="padding:5px; margin:5px;" id="subjectsList">
+    <h4>All Subjects</h4>
+    <ul id="subjectsList">
       {{ range .Site.Taxonomies.subjects }}
-              <li style="display: inline-block !important;"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small>  &nbsp; </li>
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}&nbsp;</a><small>({{ .Count }})</small></li>
       {{ end }}
     </ul>
   </div>
-
+</div>
 
 <script>
-function filterAllLists() {
-  // Get the search input element and its value
-  var input = document.getElementById('globalSearch');
-  var filter = input.value.toLowerCase();
+  function filterAllLists() {
+    // Get the search input element and its value
+    var input = document.getElementById('globalSearch');
+    var filter = input.value.toLowerCase();
 
-  // Get all lists to be filtered
-  var lists = ['instructorsList', 'dialectsList', 'subjectsList'];
+    // Get all lists to be filtered
+    var lists = ['instructorsList', 'dialectsList', 'subjectsList'];
 
-  // Loop through each list
-  lists.forEach(function(listId) {
-    var list = document.getElementById(listId);
-    var items = list.getElementsByTagName('li');
+    // Loop through each list
+    lists.forEach(function(listId) {
+      var list = document.getElementById(listId);
+      var items = list.getElementsByTagName('li');
 
-    // Loop through the list items and hide those that don't match the search query
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-      var textValue = item.textContent || item.innerText;
-      if (textValue.toLowerCase().indexOf(filter) > -1) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
+      // Loop through the list items and hide those that don't match the search query
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var textValue = item.textContent || item.innerText;
+        if (textValue.toLowerCase().indexOf(filter) > -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
       }
-    }
-  });
-}
-</script>
+    });
+  }
 
-<script>
   // Populate unique languages as radio buttons
   const languageFilter = document.getElementById('languageFilter');
   const languages = new Set();

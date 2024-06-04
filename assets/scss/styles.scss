@@ -95,30 +95,24 @@ flex-wrap: wrap;
 
 }
 .category-group {
-	flex: 1 0 24%;
+	flex: 1 0 18%;
 		padding:0px;
 		border: 1px solid #ddd;
 }
-h2{
+p{
 	margin: 0px;
 	background: #eee;
 	padding: 5px;
-	font-size: 20px;
-
+	font-weight: 500;
 }
 
-h3 {
 
-	margin: 0px;
-}
 #instructorsList {
 	padding:5px;
 	margin: 0px;
 }
 .control {
 	padding:10px 5px 10px 5px;
-
-	border-bottom: 1px solid #ddd;
 }
 ul {
 	list-style-type: decimal;
@@ -127,6 +121,18 @@ ul {
 }
 li {
 	margin-bottom: 7px;
+}
+
+@media screen and (max-width:1000px) {
+  #content-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category-group {
+    padding: 0px;
+    border: 1px solid #ddd;
+    flex: 1 0 24% !important;
+}
 }
 
 @media screen and (max-width:600px) {
