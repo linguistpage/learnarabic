@@ -1,48 +1,17 @@
-
-  {{ define "main" -}}
-  {{ .Content }}
-  {{ partial "breadcrumbs.html" . }}
-  <div class="container" id="artlist">
-    {{- range.Pages.ByTitle }}
-    <ul id="myarticles" class="item">
-      <li>
-        <div>
-         <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-        <small>({{ len .Pages}})</small>
-        </div>
-        <div>
-          {{if .Params.Subjects}}
-          <small class="meta">
-            {{ .Params.Subjects}}
-          </small>
-          {{end}}
-          {{if .Params.instructors}}
-          <small class="meta">
-            {{ .Params.Instructors }}
-          </small>
-          {{end}}
-          {{if .Params.Languages}}
-          <small class="meta">
-            {{ .Params.Languages }}
-          </small>
-          {{end}}
-          {{if .Params.categories}}
-          <small class="meta">
-            {{ .Params.Categories }}
-          </small>
-          {{end}}
-          {{if .Params.Dialects}}
-          <small class="meta">
-            {{ .Params.Dialects }}
-          </small>
-          {{end}}
-        </div>
-
-
-
-      </li>
-    </ul>
-
-    {{ end -}}
-  </div>
-  {{- end }}{{/* end main */ -}}
+{{ define "title" -}}
+{{ .Title | title }}
+{{- end }}
+{{ define "main" -}}
+<hr>
+{{ partial "breadcrumbs.html" . }}
+<hr>
+{{ .Content }}
+<ul>
+{{range .Site.RegularPages }}
+   <li>
+     <a href="{{.Permalink}}">{{.Title}}</a>
+     <br>
+   </li>
+{{end}}
+</ul>
+{{- end }}{{/* end main */ -}}

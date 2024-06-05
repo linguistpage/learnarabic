@@ -2,43 +2,17 @@
 {{ .Title | title }}
 {{- end }}
 {{ define "main" -}}
-{{ .Content }}
+<hr>
 {{ partial "breadcrumbs.html" . }}
-
-<div class="container" id="artlist">
-  <table id="myarticles" class="item">
-    <thead>
-      <tr>
-        <th>
-          {{.Title}}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {{- range.Pages.ByTitle }}
-      <tr id="searchable">
-        <td>
-
-            {{if .Params.link }}
-              <a href="{{ .Params.link }}">{{ .Params.title }}</a>
-              <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-            {{else}}
-                <a href="{{ .Permalink }}">{{ .Params.title }}</a>
-                <small>{{ if lt (len .Pages) 2 }}{{ else }}({{ len .Pages}}){{ end }}</small>
-              {{end}}
-
-          <small style="display: block;">
-            {{if .Params.Subjects}} {{ .Params.Subjects}} | {{end}}
-            {{if .Params.instructors}} {{ .Params.Instructors }} | {{ end }}
-            {{if .Params.Languages}} {{ .Params.Languages }} | {{ end }}
-            {{if .Params.Dialects}} {{ .Params.Dialects }}  {{ end }}
-          </small>
-
-        </td>
-
-      </tr>
-      {{- end }}
-    </tbody>
-  </table>
-</div>
+<hr>
+{{ .Content }}
+<ul>
+{{range .Site.RegularPages }}
+   <li>
+     <a href="{{.Permalink}}">{{.Title}}</a>
+     <br>
+     <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
+   </li>
+{{end}}
+</ul>
 {{- end }}{{/* end main */ -}}
