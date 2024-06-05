@@ -7,12 +7,14 @@
 <hr>
 {{ .Content }}
 <ul>
-{{range .Site.RegularPages }}
-   <li>
-     <a href="{{.Permalink}}">{{.Title}}</a>
-     <br>
-     <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
-   </li>
-{{end}}
-</ul>
+    {{- range.Pages.ByTitle }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+      <small>{{ if lt (len .Pages) 1 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+      <br>
+      <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
+    </li>
+    {{ end -}}
+  </ul>
+
 {{- end }}{{/* end main */ -}}

@@ -7,8 +7,19 @@
 <hr>
 {{ .Content }}
 <ul>
-  {{ range .Data.Terms.Alphabetical }}
-    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-  {{ end }}
+  {{- range.Pages.ByTitle }}
+
+  <li>
+    <div>
+    <a href="{{ .Permalink }}"> {{ .Params.title }}</a>
+    <small>{{ if lt (len .Pages) 1 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+
+
+
+
+
+  </li>
+  {{ end -}}
 </ul>
+
 {{- end }}{{/* end main */ -}}
