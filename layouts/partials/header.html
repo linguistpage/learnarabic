@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
-    <meta charset="utf-8">
     <base href="{{ .Site.BaseURL }}">
     <title> {{ .Title }} : spf13.com </title>
     <link rel="canonical" href="{{ .Permalink }}">
-
+    <meta charset="UTF-8">
+<meta name="description" content="n indexed directory of Arabic-Language learning resources">
+<meta name="keywords" content="Arabic, Language, Learning, tutorials, resources">
+<meta name="author" content="TheLinguist">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TE2SL73SC"></script>
 <script>

@@ -14,3 +14,13 @@ outputs:
   home:
     - HTML
     - RSS
+
+params:
+  author:
+    name: Linguist | اللُّــغَــوِيّــــ
+    github: https://github.com/linguistpage
+    email: linguist.page@gmail.com
+    channel: https://t.me/thearabicpage
+    donate: https://awtad.ngo/donate
+
+copyright: © 2024 Linguist | اللُّــغَــوِيّــــ.
