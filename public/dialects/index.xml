@@ -4,21 +4,17 @@
     <title>Dialects on Arabic.Page</title>
     <link>https://arabic.page/dialects/</link>
     <description>Recent content in Dialects on Arabic.Page</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
+    <managingEditor>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</managingEditor>
+    <webMaster>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</webMaster>
+    <copyright>© 2024 Linguist | اللُّــغَــوِيّــــ.</copyright>
     <atom:link href="https://arabic.page/dialects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MSA</title>
       <link>https://arabic.page/dialects/msa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</author>
       <guid>https://arabic.page/dialects/msa/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Quranic</title>
-      <link>https://arabic.page/dialects/quranic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://arabic.page/dialects/quranic/</guid>
       <description></description>
     </item>
   </channel>

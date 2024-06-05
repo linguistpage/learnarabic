@@ -4,41 +4,30 @@
     <title>Videos on Arabic.Page</title>
     <link>https://arabic.page/categories/videos/</link>
     <description>Recent content in Videos on Arabic.Page</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
+    <managingEditor>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</managingEditor>
+    <webMaster>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</webMaster>
+    <copyright>© 2024 Linguist | اللُّــغَــوِيّــــ.</copyright>
     <atom:link href="https://arabic.page/categories/videos/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AILA TV</title>
-      <link>https://arabic.page/aila-tv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://arabic.page/aila-tv/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Arab Podcasts</title>
-      <link>https://arabic.page/arab-podcasts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://arabic.page/arab-podcasts/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Arabiyya &amp; Qur&#39;an</title>
       <link>https://arabic.page/arabiyya-quran/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</author>
       <guid>https://arabic.page/arabiyya-quran/</guid>
       <description></description>
     </item>
     <item>
       <title>Learn Arabic with Nouman Ali Khan</title>
       <link>https://arabic.page/learn-arabic-with-nouman-ali-khan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</author>
       <guid>https://arabic.page/learn-arabic-with-nouman-ali-khan/</guid>
       <description></description>
     </item>
     <item>
       <title>Let&#39;s Learn Arabic</title>
       <link>https://arabic.page/lets-learn-arabic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>linguist.page@gmail.com (Linguist | اللُّــغَــوِيّــــ)</author>
       <guid>https://arabic.page/lets-learn-arabic/</guid>
       <description></description>
     </item>

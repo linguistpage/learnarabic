@@ -24,3 +24,9 @@ params:
     donate: https://awtad.ngo/donate
 
 copyright: © 2024 Linguist | اللُّــغَــوِيّــــ.
+
+sitemap:
+  changeFreq: "weekly"
+  disable: false
+  filename: sitemap.xml
+  priority: -1
