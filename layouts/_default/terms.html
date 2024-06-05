@@ -7,11 +7,8 @@
 <hr>
 {{ .Content }}
 <ul>
-{{range .Site.RegularPages }}
-   <li>
-     <a href="{{.Permalink}}">{{.Title}}</a>
-     <br>
-   </li>
-{{end}}
+  {{ range .Data.Terms.Alphabetical }}
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+  {{ end }}
 </ul>
 {{- end }}{{/* end main */ -}}
