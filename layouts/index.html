@@ -1,37 +1,9 @@
 {{ define "main" }}
   <div class="container">
-
-      <p><strong>Browse by category</strong></p>
-      <ul>
-      {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-         <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{end}}
-      </ul>
-
-      <p><strong>Browse by subjects</strong></p>
-      <ul>
-      {{range ($.Site.GetPage "taxonomyTerm" "subjects").Pages }}
-         <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{end}}
-      </ul>
-
-
-      <p><strong>Browse by dialects</strong></p>
-      <ul>
-      {{range ($.Site.GetPage "taxonomyTerm" "dialects").Pages }}
-         <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{end}}
-      </ul>
-
-      <p><strong>Browse by instructors</strong></p>
-      <ul>
-      {{range ($.Site.GetPage "taxonomyTerm" "instructors").Pages }}
-         <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{end}}
-      </ul>
-
-
-      <p><strong>Browse all posts</strong></p>
+<hr>
+<p>Browse By: <a href="/categories">Category</a> | <a href="/subjects">Subject</a> | <a href="/dialects">Dialect</a> | <a href="/instructors">Instructors</a></p>
+<hr>
+      <p><strong>All Posts</strong></p>
       <ul>
       {{range .Site.RegularPages }}
          <li>
@@ -41,6 +13,7 @@
          </li>
       {{end}}
       </ul>
+      <br>
   </div>
 
 

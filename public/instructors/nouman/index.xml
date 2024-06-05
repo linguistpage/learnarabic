@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nouman on Arabic.Page</title>
+    <link>https://arabic.page/instructors/nouman/</link>
+    <description>Recent content in Nouman on Arabic.Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://arabic.page/instructors/nouman/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dream Big</title>
+      <link>https://arabic.page/dream-big/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://arabic.page/dream-big/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learn Arabic with Nouman Ali Khan</title>
+      <link>https://arabic.page/learn-arabic-with-nouman-ali-khan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://arabic.page/learn-arabic-with-nouman-ali-khan/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

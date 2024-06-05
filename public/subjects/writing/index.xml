@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Arabic.Page</title>
+    <link>https://arabic.page/subjects/writing/</link>
+    <description>Recent content in Writing on Arabic.Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://arabic.page/subjects/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alphabet</title>
+      <link>https://arabic.page/alphabet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://arabic.page/alphabet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multilingual Keyboard</title>
+      <link>https://arabic.page/multilingual-keyboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://arabic.page/multilingual-keyboard/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
