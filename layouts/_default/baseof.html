@@ -2,16 +2,36 @@
 <html>
 {{ partial "header.html" . }}
 <body style="font-family: sans-serif !important;">
-  <h2>{{ .Site.Title }} 🇵🇸</h2>
-  <p>An indexed directory of Arabic-Language learning resources</p>
-  <small> <a href="mailto:linguist.page@gmail.com">Email</a> | <a href="https://t.me/thearabicpage">Telegram Channel</a> </small>
-  <br>
 <main>
+  <h2>{{ .Site.Title }} 🇵🇸</h2>
+
+  <style>
+  main {
+  width: 600px;
+  margin: auto;
+  }
+  li {
+    list-style-type: "- ";
+  }
+  ul {
+    padding:10px;
+    margin: 0px;
+  }
+  p {
+    margin-bottom: 3px;
+  }
+  small {
+    color: #aaa;
+    text-transform: lowercase;
+  }
+    </style>
 <header>
 </header>
 <div class="content">
 {{- block "main" . }}{{ end }}
 </div>
+<br>
+<p> Feel free to reach out on <a href="mailto:linguist.page@gmail.com">email</a>, or join our <a href="https://t.me/thearabicpage">Telegram Channel</a> </p>
 </main>
 </body>
 </html>

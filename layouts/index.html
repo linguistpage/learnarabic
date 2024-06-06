@@ -1,20 +1,24 @@
 {{ define "main" }}
+
+
   <div class="container">
-<hr>
-<p>Browse By: <a href="/categories">Category</a> | <a href="/subjects">Subject</a> | <a href="/dialects">Dialect</a> | <a href="/instructors">Instructors</a></p>
-<hr>
-      <p><strong>All Posts</strong></p>
+<p>
+
+Discover a rich array of Arabic language learning resources, conveniently organized by <a href="/categories">categories</a>, <a href="/subjects">subjects</a>, <a href="/dialects">dialects</a>, and <a href="/instructors">instructors</a>. Feel free to explore all the resources listed below at your own pace. </p>
+
       <ul>
       {{range .Site.RegularPages }}
          <li>
-           <a href="{{.Permalink}}">{{.Title}}</a>
-           <br>
-           <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
+           {{ if .Params.link }}
+           <a href="{{ .Params.link}}">{{.Title}}</a>
+           {{ else }}
+           <a href="{{ .Permalink}}">{{.Title}}</a>
+           {{ end }}
+           <small> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</small>
          </li>
       {{end}}
       </ul>
       <br>
   </div>
-
 
 {{ end }}
