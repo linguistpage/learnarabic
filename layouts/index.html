@@ -14,7 +14,11 @@ Discover a rich array of Arabic language learning resources, conveniently organi
            {{ else }}
            <a href="{{ .Permalink}}">{{.Title}}</a>
            {{ end }}
-           <small> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</small>
+           <small>
+             {{ if .Params.categories }}{{.Params.categories }}/{{end}}
+             {{ if .Params.dialects }}{{.Params.dialects }} {{end}}
+             {{ if .Params.subjects }}/{{.Params.subjects}}{{end}}
+             {{ if .Params.instructors }}/{{.Params.instructors }}{{end}}</small>
          </li>
       {{end}}
       </ul>

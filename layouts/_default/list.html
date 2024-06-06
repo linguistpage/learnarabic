@@ -6,7 +6,11 @@
 <ul>
     {{- range.Pages.ByTitle }}
     <li>
-      <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+      {{ if .Params.link }}
+      <a href="{{ .Params.link}}">{{.Title}}</a>
+      {{ else }}
+      <a href="{{ .Permalink}}">{{.Title}}</a>
+      {{ end }}
       <small>{{ if lt (len .Pages) 1 }}{{ else }}({{ len .Pages}}){{ end }}</small>
       <br>
       <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
