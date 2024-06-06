@@ -11,9 +11,14 @@
       {{ else }}
       <a href="{{ .Permalink}}">{{.Title}}</a>
       {{ end }}
-      <small>{{ if lt (len .Pages) 1 }}{{ else }}({{ len .Pages}}){{ end }}</small>
+      <sup>{{ if lt (len .Pages) 1 }}{{ else }}({{ len .Pages}}){{ end }}</sup>
       <br>
-      <sup> {{.Params.categories }} - {{.Params.dialects }} - {{.Params.subjects }} - {{.Params.instructors }}</sup>
+      <small>
+        {{ if .Params.categories}}{{.Params.categories}} / {{end}}
+        {{ if .Params.dialects}}{{.Params.dialects}}{{end}}
+        {{ if .Params.subjects}} / {{.Params.subjects}}{{end}}
+        {{ if .Params.instructors}} / {{.Params.instructors}}{{end}}
+      </small>
     </li>
     {{ end -}}
   </ul>

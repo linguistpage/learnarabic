@@ -3,7 +3,7 @@
 {{ partial "header.html" . }}
 <body style="font-family: sans-serif !important;">
 <main>
-  <h2>{{ .Site.Title }} 🇵🇸</h2>
+  <h4 >{{ .Site.Title }} 🇵🇸</h4>
 
   <style>
   main {
@@ -13,6 +13,7 @@
   }
   li {
     list-style-type: "- ";
+    margin-bottom: 5px;
   }
   ul {
     padding:10px;
@@ -24,6 +25,8 @@
   small {
     color: #aaa;
     text-transform: lowercase;
+    font-size: 9px;
+    display: block;
   }
   a:visited {
 
@@ -32,14 +35,18 @@
   nav a{
     text-decoration: none !important;
   }
+  sup {
+    font-size: 9px;
+    color: #828282;
+  }
     </style>
 <header>
 </header>
 <div class="content">
 {{- block "main" . }}{{ end }}
 </div>
-<br>
-<p> Feel free to reach out on <a href="mailto:linguist.page@gmail.com">email</a>, or join our <a href="https://t.me/thearabicpage">telegram channel</a> </p>
+<p> Feel free to reach out on <a href="mailto:linguist.page@gmail.com">email</a>, or join our <a href="https://t.me/thearabicpage">telegram</a> channel. <br>Copyright (c) 2024 - MIT CCA 4.0 </p>
+
 <br>
 </main>
 </body>

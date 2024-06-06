@@ -4,21 +4,22 @@
   <div class="container">
 <p>
 
-Discover a rich array of Arabic language learning resources, conveniently organized by <a href="/categories">categories</a>, <a href="/subjects">subjects</a>, <a href="/dialects">dialects</a>, and <a href="/instructors">instructors</a>. Feel free to explore all the resources listed below at your own pace. </p>
+Discover a rich array of Arabic language learning resources, conveniently organized by <a href="/categories">categories</a>, <a href="/subjects">subjects</a>, <a href="/dialects">dialects</a>, and <a href="/instructors">instructors</a>. Feel free to explore <strong>all the resources</strong> listed below at your own pace: </p>
 
       <ul>
       {{range .Site.RegularPages }}
          <li>
            {{ if .Params.link }}
-           <a href="{{ .Params.link}}">{{.Title}}</a>
+           <a href="{{ .Params.link}}">{{.Title}}</a> {{if .Params.Featured }}<sup>⭐️</sup>{{end}}
            {{ else }}
-           <a href="{{ .Permalink}}">{{.Title}}</a>
+           <a href="{{ .Permalink}}">{{.Title}}</a> {{if .Params.Featured }}<sup>⭐️</sup>{{end}}
            {{ end }}
            <small>
-             {{ if .Params.categories}}{{.Params.categories}} /{{end}}
+             {{ if .Params.categories}}{{.Params.categories}} / {{end}}
              {{ if .Params.dialects}}{{.Params.dialects}}{{end}}
-             {{ if .Params.subjects}} /{{.Params.subjects}}{{end}}
-             {{ if .Params.instructors}} /{{.Params.instructors}}{{end}}</small>
+             {{ if .Params.subjects}} / {{.Params.subjects}}{{end}}
+             {{ if .Params.instructors}} / {{.Params.instructors}}{{end}}
+           </small>
          </li>
       {{end}}
       </ul>
