@@ -15,10 +15,10 @@ Discover a rich array of Arabic language learning resources, conveniently organi
            <a href="{{ .Permalink}}">{{.Title}}</a>
            {{ end }}
            <small>
-             {{ if .Params.categories }}{{.Params.categories }}/{{end}}
-             {{ if .Params.dialects }}{{.Params.dialects }} {{end}}
-             {{ if .Params.subjects }}/{{.Params.subjects}}{{end}}
-             {{ if .Params.instructors }}/{{.Params.instructors }}{{end}}</small>
+             {{ if .Params.categories}}{{.Params.categories}} /{{end}}
+             {{ if .Params.dialects}}{{.Params.dialects}}{{end}}
+             {{ if .Params.subjects}} /{{.Params.subjects}}{{end}}
+             {{ if .Params.instructors}} /{{.Params.instructors}}{{end}}</small>
          </li>
       {{end}}
       </ul>
