@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #questionnaire div {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        button.download {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questionnaire</h1>
+    <div id="questionnaire">
+        <div>
+            <label for="question1">What is your favorite color?</label>
+            <input type="text" id="question1"><br>
+            <button onclick="saveAnswer(1)">Save Answer</button>
+            <button onclick="editAnswer(1)">Edit Answer</button>
+            <p id="answer1"></p>
+        </div>
+
+        <div>
+            <label for="question2">What is your hobby?</label>
+            <input type="text" id="question2"><br>
+            <button onclick="saveAnswer(2)">Save Answer</button>
+            <button onclick="editAnswer(2)">Edit Answer</button>
+            <p id="answer2"></p>
+        </div>
+
+        <button class="download" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Save the answer and display it below the question
+        function saveAnswer(questionNumber) {
+            const inputField = document.getElementById('question' + questionNumber);
+            const answer = inputField.value;
+
+            document.getElementById('answer' + questionNumber).innerText = 'Answer: ' + answer;
+            inputField.disabled = true; // Disable the input field after saving
+        }
+
+        // Edit the answer by re-enabling the input field
+        function editAnswer(questionNumber) {
+            const inputField = document.getElementById('question' + questionNumber);
+            inputField.disabled = false; // Enable the input field for editing
+        }
+
+        // Download the content as a PDF
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("Questionnaire Answers", 10, 10);
+
+            const questions = document.querySelectorAll('label');
+            const answers = document.querySelectorAll('p');
+
+            questions.forEach((q, index) => {
+                doc.text(q.innerText + " " + answers[index].innerText, 10, 20 + (index * 10));
+            });
+
+            doc.save('questionnaire.pdf');
+        }
+    </script>
+</body>
+</html>
